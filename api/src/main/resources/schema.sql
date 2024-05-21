@@ -4,7 +4,7 @@ CREATE DATABASE raven;
 
 USE raven;
 
-CREATE TABLE `questions` (
+CREATE TABLE `organisation` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `organisation_name` varchar(1000) DEFAULT NULL,
   `organisation_logo` varchar(255) NOT NULL,
@@ -14,6 +14,7 @@ CREATE TABLE `questions` (
   `careers` BOOLEAN DEFAULT FALSE,
   `creative_arts` BOOLEAN DEFAULT FALSE,
   `curriculum`BOOLEAN DEFAULT FALSE,
+  `life_skills`BOOLEAN DEFAULT FALSE,
   `mental_health` BOOLEAN DEFAULT FALSE,
   `physical_activity`BOOLEAN DEFAULT FALSE,
   `pshe`BOOLEAN DEFAULT FALSE,

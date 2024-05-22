@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import springLogo from './assets/Spring_Framework_Logo.png'
 import ravenLogo from './assets/ravenLogo.png'
 import './App.scss'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './containers/Home/Home'
 
 const App= () => {
  //const [count, setCount] = useState(0)
@@ -32,6 +34,7 @@ const App= () => {
 }, []); // Empty dependency array ensures this effect runs only once on component mount
 
   return (
+    <Router>
     <>
       <div>
         <a href="">
@@ -41,13 +44,11 @@ const App= () => {
              />
         </a>
       </div>
-
       <div>
         <h1>RAVEN</h1>
         <p>Providing access to information on charitable and non profit organiastions who can support young people.</p>
-        <p>Giving you the information you need to make decisions on what is right for you.</p>
-        <p>Click the RAVEN to SEE</p>
-        
+        <p>Giving you the information you need to take decisions on what is right for you.</p>
+        <p>Click the RAVEN to SEE</p>      
       </div>
 
       <p className ="values"> ACCESSIBILITY TRANPARENCY OWNERSHIP</p>
@@ -63,8 +64,21 @@ const App= () => {
           <img src={springLogo} className="logo_spring" alt="SPring logo" />
         </a>
       </div>
+    </>   
+<Routes>
+      <Route path="/" element={<Home />} />
+</Routes>
+      
+  
+</Router>
 
-      {/* <div className="card">
+  )
+}
+
+export default App
+
+
+{/* <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
@@ -72,8 +86,3 @@ const App= () => {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div> */}
-    </>
-  )
-}
-
-export default App

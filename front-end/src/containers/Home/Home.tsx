@@ -1,9 +1,10 @@
 import { useEffect} from 'react'
-import reactLogo from '../../assets/ravenLogo.png'
 import viteLogo from '/vite.svg'
+import reactLogo from '../../assets/react.svg'
 import springLogo from '../../assets/Spring_Framework_Logo.png'
 import ravenLogo from '../../assets/ravenLogo.png'
-
+import Nav from '../../components/Nav/Nav'
+import './Home.scss'
 const Home =() => {
 
     useEffect(() => {
@@ -31,6 +32,7 @@ const Home =() => {
 
 return (
     <>
+    <Nav/>
     <div>
       <a href="">
       <img className = "logo_raven spin"

@@ -5,7 +5,6 @@ import Home from './containers/Home/Home'
 const App= () => {
  //const [count, setCount] = useState(0)
 
-
   return (
     <Router>
       <Routes>

@@ -36,9 +36,14 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+
 .spin {
   @media (prefers-reduced-motion: no-preference){
   animation: logo-spin-3d infinite 20s linear;}
+}
+
+.values {
+  margin-top: 4rem;
 }
 
 @keyframes logo-spin {

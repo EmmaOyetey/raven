@@ -34,18 +34,23 @@ const App= () => {
   return (
     <>
       <div>
+        <a href="">
         <img className = "logo_raven spin"
              src={ravenLogo} 
              alt="raven Logo" 
              />
+        </a>
       </div>
 
       <div>
         <h1>RAVEN</h1>
         <p>Providing access to information on charitable and non profit organiastions who can support young people.</p>
         <p>Giving you the information you need to make decisions on what is right for you.</p>
-      <p> ACCESSIBILITY TRANPARENCY OWNERSHIP</p>
+        <p>Click the RAVEN to SEE</p>
+        
       </div>
+
+      <p className ="values"> ACCESSIBILITY TRANPARENCY OWNERSHIP</p>
 
       <div className = "dev-tools"> 
         <a href="https://vitejs.dev" target="_blank">

@@ -43,8 +43,7 @@ return (
     </div>
     <div>
       <h1>RAVEN</h1>
-      <p>Providing access to information on charitable and non profit organiastions who can support young people.</p>
-      <p>Giving you the information you need to take decisions on what is right for you.</p>
+      <p>Providing access to information on charitable and non profit organiastions who support young people.</p>
       <p>Click the RAVEN to SEE</p>      
     </div>
 

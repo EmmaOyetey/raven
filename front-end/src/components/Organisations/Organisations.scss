@@ -1,33 +1,33 @@
-.organisations {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    margin-top: 1.2rem;
+// .organisations {
+//     display: flex;
+//     flex-direction: column;
+//     margin: 1rem;
+//     margin-top: 1.2rem;
   
 
-    // .beer-gallery__heading{
-    //   font-size: 1.7rem;
-    //   text-align: right;
-    //   padding-right: 2rem;
-    //   margin: 0;
-    // }
+//     // .beer-gallery__heading{
+//     //   font-size: 1.7rem;
+//     //   text-align: right;
+//     //   padding-right: 2rem;
+//     //   margin: 0;
+//     // }
 
-    .organisations__content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+//     .organisations__content {
+//       display: flex;
+//       flex-wrap: wrap;
+//       justify-content: flex-end;
 
-   }
+//    }
 
-  }
+//   }
 
-  .organisations__content a {
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
+//   .organisations__content a {
+//     text-decoration: none;
+//     cursor: pointer;
+//     transition: transform 0.2s;
+//   }
 
-  .organisations__content a:hover {
-    transform: scale(1.05);
-  }
+//   .organisations__content a:hover {
+//     transform: scale(1.05);
+//   }
 

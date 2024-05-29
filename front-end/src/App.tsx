@@ -8,7 +8,7 @@ const App= () => {
 
  const fetchOrganisations = async () => {
   try {
-    const response = await fetch('http://localhost:8080/api/organisations');
+    const response = await fetch('http://localhost:8080/organisations');
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }

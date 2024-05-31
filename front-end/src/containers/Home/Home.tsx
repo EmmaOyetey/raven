@@ -1,6 +1,6 @@
 import { useEffect} from 'react'
 import viteLogo from '/vite.svg'
-import reactLogo from '../../assets/react.svg'
+import reactLogo from '/react.svg'
 import springLogo from '../../assets/Spring_Framework_Logo.png'
 import ravenLogo from '../../assets/ravenLogo.png'
 import Nav from '../../components/Nav/Nav'

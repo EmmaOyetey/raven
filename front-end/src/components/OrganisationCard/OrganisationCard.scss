@@ -1,52 +1,59 @@
+@use "../../styles/variables" as *;
+
 .organisation-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 17rem;
-    height: 24rem; 
-    padding: 1rem;
-    box-shadow: 0 -0.325rem 0.3rem rgba(whitesmoke, 0.25);
-    border: 0.3rem solid #123456;
-    border-radius: 5%;
-    background-color:rgb(227, 223, 223);
-    margin: 0.8rem;
-  
-  
-  
-        .organisation-card__content {
-         width: 100%; 
-         text-align: center;
-         
-      
-        .organisation-card__image-container {
-         width: 100%; 
-         display: flex;
-         justify-content: center;
-          }
+  display: flex;
+  flex-direction: column;
+  width: 22rem; // Increased width to accommodate side-by-side layout
+  padding: 1rem;
+  box-shadow: 0 0.325rem 0.3rem rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid $color-navy-light;
+  border-radius: 0.5rem;
+  background-color: $color-navy;
+  margin: 0.8rem;
+
+  .organisation-card__content {
+    width: 100%;
+    text-align: left;
+
+    .organisation-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; // Ensures name and logo are spaced out
+      margin-bottom: 1rem;
+
+      .organisation-card__name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $color-white;
+      }
+
+      .organisation-card__image-container {
+        width: 3rem; // Small size for the container
+        height: 3rem; // Small size for the container
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         .organisation-card__image {
-            width:100%;
-            height: auto;
-            max-height: 7rem;
-          }
-      
-        .organisation-card__name {
-            margin-top: 0.1rem; 
-            margin-bottom: 0;
-            font-size: 1.2rem;
-            font-weight: 500;
-            text-align: center;
-            color: #123456;
-            }
-  
-          .organisation-card__abrv-info {
-            margin-top: 0.2rem;
-            margin-bottom: 0;
-            font-size: 1rem;
-            font-weight: 500;
-            text-align:center;
-            color: #123456;
-          }
+          width: 100%; // Ensure the image fits within the container
+          height: 100%; // Ensure the image fits within the container
+          object-fit: contain;
+          border-radius: 20%;
+          border: 0.1rem solid $color-white;
         }
+      }
+    }
+
+    .organisation-card__abrv-info {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $color-white;
+      margin-bottom: 0.5rem;
+    }
+
+    .organisation-card__details {
+      font-size: 0.8rem;
+      color: $color-white;
+    }
   }
+}

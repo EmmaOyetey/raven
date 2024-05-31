@@ -17,10 +17,6 @@ import ravenLogo from '../../assets/ravenLogo.png';
 import { Link } from 'react-router-dom';
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window;
 }
 
@@ -37,7 +33,7 @@ export default function DrawerAppBar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography variant="h6" sx={{ my: 2, fontFamily: 'Major Mono Display, monospace' }}>
         RAVEN
       </Typography>
       <Divider />
@@ -45,7 +41,7 @@ export default function DrawerAppBar(props: Props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton component={Link} to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item} sx={{ fontFamily: 'News Cycle, sans-serif' }} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -58,28 +54,28 @@ export default function DrawerAppBar(props: Props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav"sx={{ backgroundColor: '#091a2a' }}>
+      <AppBar component="nav" sx={{ backgroundColor: '#091a2a' }}>
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ ml:1, mr: 2, display: { sm: 'none' } }}
+            sx={{ ml: 1, mr: 2, display: { sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
-          <img src={ravenLogo} alt="Raven Logo" style={{ width: '40px', marginRight: '10px' }} /> 
+          <img src={ravenLogo} alt="Raven Logo" style={{ width: '60px', height: 'auto', marginRight: '10px' }} /> 
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, textAlign: 'left', display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, textAlign: 'left', display: { xs: 'none', sm: 'block' }, fontFamily: 'Major Mono Display, monospace' }}
           >
             RAVEN
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} component={Link} to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}sx={{ color: '#fff' }}>
+              <Button key={item} component={Link} to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} sx={{ color: '#fff', fontFamily: 'News Cycle, sans-serif' }}>
                 {item}
               </Button>
             ))}
@@ -93,7 +89,7 @@ export default function DrawerAppBar(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },

@@ -17,4 +17,8 @@ public class RavenService {
         return organisationRepository.findAll();
     }
 
+    public Organisation addOrganisation(Organisation organisation) {
+        return organisationRepository.save(organisation);
+    }
+
 }

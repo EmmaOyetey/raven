@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Organisation from './containers/Organisations/Organisations'
 import Home from './containers/Home/Home'
+import CreateOrganisation from './containers/Create/CreateOrganisation';
 const App= () => {
  //const [count, setCount] = useState(0)
 
@@ -34,6 +35,7 @@ const [organisations, setOrganisations] = useState([]);
       <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/organisations" element={<Organisation organisations = {organisations} />} />
+            <Route path="/organisations/add" element = {<CreateOrganisation />} />
       </Routes>
     </Router>
 

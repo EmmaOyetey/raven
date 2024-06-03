@@ -21,7 +21,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Organisations'];
+const navItems = ['Home', 'About', 'Organisations', 'Add'];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -40,7 +40,7 @@ export default function DrawerAppBar(props: Props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton component={Link} to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} sx={{ textAlign: 'center' }}>
+            <ListItemButton component={Link} to={item === 'Home' ? '/' : `/${item.toLowerCase() === 'add' ? 'organisations/add' : item.toLowerCase()}`} sx={{ textAlign: 'center' }}>
               <ListItemText primary={item} sx={{ fontFamily: 'News Cycle, sans-serif' }} />
             </ListItemButton>
           </ListItem>
@@ -75,7 +75,7 @@ export default function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} component={Link} to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} sx={{ color: '#fff', fontFamily: 'News Cycle, sans-serif' }}>
+              <Button key={item} component={Link} to={item === 'Home' ? '/' : `/${item.toLowerCase() === 'add' ? 'organisations/add' : item.toLowerCase()}`} sx={{ color: '#fff', fontFamily: 'News Cycle, sans-serif' }}>
                 {item}
               </Button>
             ))}

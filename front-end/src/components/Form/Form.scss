@@ -1,0 +1,88 @@
+@use "../../styles/variables" as *;
+
+.organisation-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: $color-navy;
+    color: $color-white;
+  
+    .form-group {
+      margin-bottom: 10px;
+  
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+      }
+  
+      input[type="text"],
+      input[type="url"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+  
+      .word-count {
+        font-size: 0.9em;
+        color: #666;
+        margin-top: 5px;
+      }
+    }
+  
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      
+      
+      .checkbox-item {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 7px; 
+        justify-content: space-between;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+
+        input[type="checkbox"] {
+            transform: scale(1.2); // Make checkboxes larger
+        }
+
+        
+        label {
+          margin-left: 8px;
+        }
+      }
+
+        @media (max-width: 768px) {
+            flex-direction: column; // Change to single column layout on smaller screens
+
+            .checkbox-item {
+                width: 100%; // Full width for single column layout
+            }
+        }
+
+    
+    }
+
+  
+    button {
+      align-self: flex-end;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: $color-navy-light;
+      color: #fff;
+      cursor: pointer;
+      
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }

@@ -1,6 +1,6 @@
 import { useEffect} from 'react'
-import viteLogo from '/vite.svg'
-import reactLogo from '/react.svg'
+import viteLogo from '../../../public/vite.svg'
+import reactLogo from '../../../public/react.svg'
 import springLogo from '../../assets/Spring_Framework_Logo.png'
 import ravenLogo from '../../assets/ravenLogo.png'
 import Nav from '../../components/Nav/Nav'
@@ -8,24 +8,18 @@ import './Home.scss'
 const Home =() => {
 
     useEffect(() => {
-        // Timeout duration in milliseconds
-        const timeoutDuration = 19000; // 5 seconds
+        
+        const timeoutDuration = 19000; 
       
-        // Log a message when the timeout function is created
-        console.log('Timeout function created');
-      
-        // Timeout function to remove the spinning animation class after timeoutDuration
         const timeoutFunction = setTimeout(() => {
           console.log('Timeout function executed');
           const ravenLogoElement = document.querySelector('.logo_raven');
           if (ravenLogoElement) {
-            ravenLogoElement.classList.remove('spin'); // Remove the spinning class
+            ravenLogoElement.classList.remove('spin'); 
           }
         }, timeoutDuration);
       
-        // Clean up function to clear the timeout when component unmounts
         return () => {
-          console.log('Cleanup function executed');
           clearTimeout(timeoutFunction);
         };
       }, []); //

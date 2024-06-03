@@ -1,5 +1,5 @@
 type OrganisationType = {
-    id: number;
+    id?: number;
     name: string;
     logo: string;
     overview :string;

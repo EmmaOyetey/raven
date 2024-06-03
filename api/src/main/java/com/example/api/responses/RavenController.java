@@ -6,10 +6,7 @@ import com.example.api.models.Organisation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +27,12 @@ public class RavenController {
         List<Organisation> organisations = ravenService.getAllOrganisations();
         return ResponseEntity.ok(organisations);
     }
+
+    @PostMapping("/organisation")
+    public ResponseEntity<Organisation> createOrganisation(@RequestBody Organisation organisation) {
+        Organisation newOrganisation = ravenService.addOrganisation(organisation);
+        return ResponseEntity.status(HttpStatus.CREATED).body(newOrganisation);
+    }
+
 
 }

@@ -28,7 +28,7 @@ public class RavenController {
         return ResponseEntity.ok(organisations);
     }
 
-    @PostMapping("/organisation")
+    @PostMapping("/organisations/add")
     public ResponseEntity<Organisation> createOrganisation(@RequestBody Organisation organisation) {
         Organisation newOrganisation = ravenService.addOrganisation(organisation);
         return ResponseEntity.status(HttpStatus.CREATED).body(newOrganisation);

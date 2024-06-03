@@ -52,8 +52,8 @@ const OrganisationForm: React.FC<OrganisationFormProps> = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit} className="organisation-form">
       <div className="form-group">
-        <label htmlFor="organisationName">Organisation Name</label>
-        <input type="text" name="organisationName" value={formValues.name} onChange={handleChange} required />
+        <label htmlFor="name">Organisation Name</label>
+        <input type="text" name="name" value={formValues.name} onChange={handleChange} required />
       </div>
       <div className="form-group">
         <label htmlFor="logo">Logo URL</label>

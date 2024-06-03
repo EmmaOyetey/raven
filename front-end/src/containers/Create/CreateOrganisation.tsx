@@ -9,7 +9,7 @@ const CreateOrganisation = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (newOrganisation: OrganisationType) => {
-    const result = await fetch("http://localhost:8080/organisation", {
+    const result = await fetch("http://localhost:8080/organisations/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -20,7 +20,7 @@ const CreateOrganisation = () => {
     if (result.ok) {
       alert("Organisation added");
       const createdOrganisation = await result.json();
-      navigate("/organisation/edit/" + createdOrganisation.id, { state: createdOrganisation });
+      navigate("/organisation/" + createdOrganisation.name, { state: createdOrganisation });
     } else {
       const message = await result.text();
       alert(message);

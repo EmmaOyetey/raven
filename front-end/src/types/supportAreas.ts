@@ -1,10 +1,4 @@
-type OrganisationType = {
-    id?: number;
-    name: string;
-    logo: string;
-    overview :string;
-    websiteURL : string;
-    impactURL: string;
+type SupportAreas = {
     careers: boolean;
     creativeArts: boolean;
     curriculum:boolean;
@@ -13,7 +7,4 @@ type OrganisationType = {
     physicalActivity: boolean;
     pshe:boolean;
     tech: boolean;
-   
- };
-
- export default OrganisationType
+}

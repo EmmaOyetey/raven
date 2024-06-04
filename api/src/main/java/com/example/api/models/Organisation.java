@@ -11,8 +11,8 @@ public class Organisation {
     private String name;
     private String logo;
     private String overview;
-    private String link;
-    private String impact;
+    private String websiteURL;
+    private String impactURL;
     private boolean careers = false;
     private boolean creativeArts = false;
     private boolean curriculum = false;
@@ -54,20 +54,20 @@ public class Organisation {
         this.overview = overview;
     }
 
-    public String getLink() {
-        return link;
+    public String getWebsiteURL() {
+        return websiteURL;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setWebsiteURL(String websiteURL) {
+        this.websiteURL = websiteURL;
     }
 
-    public String getImpact() {
-        return impact;
+    public String getImpactURL() {
+        return impactURL;
     }
 
-    public void setImpact(String impact) {
-        this.impact = impact;
+    public void setImpactURL(String impactURL) {
+        this.impactURL = impactURL;
     }
 
     public boolean isCareers() {
@@ -141,8 +141,8 @@ public class Organisation {
                 ", name='" + name + '\'' +
                 ", logo='" + logo + '\'' +
                 ", overview='" + overview + '\'' +
-                ", link='" + link + '\'' +
-                ", impact='" + impact + '\'' +
+                ", websiteURL='" + websiteURL + '\'' +
+                ", impactURL='" + impactURL + '\'' +
                 ", careers=" + careers +
                 ", creativeArts=" + creativeArts +
                 ", curriculum=" + curriculum +

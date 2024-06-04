@@ -7,13 +7,13 @@ type OrganisationFormProps = {
   onSubmit: (formValues: OrganisationType) => void;
 }
 
-const OrganisationForm: React.FC<OrganisationFormProps> = ({ onSubmit }) => {
+const OrganisationForm = ({ onSubmit }:OrganisationFormProps) => {
   const [formValues, setFormValues] = useState<OrganisationType>({
     name: '',
     logo: '',
     overview: '',
-    link: '',
-    impact: '',
+    websiteURL: '',
+    impactURL: '',
     careers: false,
     creativeArts: false,
     curriculum: false,
@@ -57,22 +57,22 @@ const OrganisationForm: React.FC<OrganisationFormProps> = ({ onSubmit }) => {
       </div>
       <div className="form-group">
         <label htmlFor="logo">Logo URL</label>
-        <input type="text" name="logo" value={formValues.logo} onChange={handleChange} required />
+        <input type="text" name="logoURL" value={formValues.logo} onChange={handleChange} required />
       </div>
       <div className="form-group">
-        <label htmlFor="overview">Overview</label>
+        <label htmlFor="Website link">Website URL</label>
+        <input type="url" name="websiteURL" value={formValues.websiteURL} onChange={handleChange} required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="impact">Impact URL</label>
+        <input type="url" name="impactURL" value={formValues.impactURL} onChange={handleChange} required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="overview">Overview (max 50 words)</label>
         <textarea name="overview" value={formValues.overview} onChange={handleChange} required />
+        <div className="word-count">{wordCount(formValues.overview)} / 50 words</div>
       </div>
-      <div className="form-group">
-        <label htmlFor="link">Link</label>
-        <input type="url" name="link" value={formValues.link} onChange={handleChange} required />
-      </div>
-      <div className="form-group">
-        <label htmlFor="impact">Impact (max 50 words)</label>
-        <textarea name="impact" value={formValues.impact} onChange={handleChange} required />
-        <div className="word-count">{wordCount(formValues.impact)} / 50 words</div>
-      </div>
-      <div className="form-group">
+      <div className="form-group"> 
         <label>Do you offer the following to young people?</label>
         <div className="checkbox-group">
           {['careers', 'creativeArts', 'curriculum', 'lifeSkills', 'mentalHealth', 'physicalActivity', 'pshe', 'tech'].map((field) => (

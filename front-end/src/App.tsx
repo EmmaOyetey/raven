@@ -7,7 +7,7 @@ import CreateOrganisation from './containers/Create/CreateOrganisation';
 const App= () => {
  //const [count, setCount] = useState(0)
 
- const fetchOrganisations = async () => {
+ const fetchAllOrganisations = async () => {
   try {
     const response = await fetch('http://localhost:8080/organisations');
     if (!response.ok) {
@@ -20,21 +20,21 @@ const App= () => {
   }
 };
 
-const [organisations, setOrganisations] = useState([]);
+const [allOrganisations, setAllOrganisations] = useState([]);
 
   useEffect(() => {
-    const getOrganisations = async () => {
-      const data = await fetchOrganisations();
-      setOrganisations(data);
+    const getAllOrganisations = async () => {
+      const data = await fetchAllOrganisations();
+      setAllOrganisations(data);
     };
-    getOrganisations();
+    getAllOrganisations();
   }, []);
 
   return (
     <Router>
       <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/organisations" element={<Organisation organisations = {organisations} />} />
+            <Route path="/organisations" element={<Organisation allOrganisations = {allOrganisations} />} />
             <Route path="/organisations/add" element = {<CreateOrganisation />} />
       </Routes>
     </Router>

@@ -11,8 +11,8 @@ const OrganisationCard = ({name, imageUrl, overview} : OrganisationCardProps) =>
 
     const truncateDescription = () => {
         const words = overview.split(' ');
-        if (words.length > 29 ) {
-          return words.slice(0, 29).join(' ') + '...';
+        if (words.length > 30) {
+          return words.slice(0, 30).join(' ') + '...';
         }
         return overview;
     }

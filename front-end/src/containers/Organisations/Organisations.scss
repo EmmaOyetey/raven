@@ -11,6 +11,8 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     min-height: 200px; 
+    height: 400px; 
+    position: relative;
   }
 
   .organisations__content a {
@@ -26,16 +28,15 @@
 
   .no-results {
     font-size: 1.2rem;
-    color: $color-navy; // Use the navy blue color for the message as well
+    color: $color-navy; 
 
     p a {
-      color: $color-navy; // Set the link color to navy blue
+      color: $color-navy; 
       text-decoration: underline;
     }
   }
 }
 
-// Adjust the font size of the dropdown
 .search-box__dropdown {
   font-size: 1.2rem;
 }

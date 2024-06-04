@@ -22,7 +22,7 @@ const DropDownBox = ({ label, searchTerm, items, handleFilterBySupportArea }: Dr
             onChange={handleFilterBySupportArea} 
             className="search-box__dropdown"
             >
-            <option value = "" >Select an Area</option>
+            <option value = "" >All Organisations</option>
                 {items.map((item : string, index : number) => (
                 <option key={index} value={item}>
                     {item}

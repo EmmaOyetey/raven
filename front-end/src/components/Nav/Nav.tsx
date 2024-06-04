@@ -65,7 +65,9 @@ export default function DrawerAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <img src={ravenLogo} alt="Raven Logo" style={{ width: '60px', height: 'auto', marginRight: '10px' }} /> 
+          <Link to="/home" style={{ display: 'flex', alignItems: 'center' }}> {/* Wrap img in Link */}
+            <img src={ravenLogo} alt="Raven Logo" style={{ width: '60px', height: 'auto', marginRight: '10px' }} />
+          </Link>
           <Typography
             variant="h6"
             component="div"

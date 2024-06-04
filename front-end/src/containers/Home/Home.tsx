@@ -5,6 +5,7 @@ import springLogo from '../../assets/Spring_Framework_Logo.png'
 import ravenLogo from '../../assets/ravenLogo.png'
 import Nav from '../../components/Nav/Nav'
 import './Home.scss'
+import { Link } from 'react-router-dom'
 const Home =() => {
 
     useEffect(() => {
@@ -28,12 +29,12 @@ return (
     <>
     <Nav/>
     <div>
-      <a href="">
+    <Link to="/organisations"> 
       <img className = "logo_raven spin"
            src={ravenLogo} 
            alt="raven Logo" 
            />
-      </a>
+      </Link>
     </div>
     <div>
       <h1>RAVEN</h1>

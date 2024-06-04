@@ -62,7 +62,7 @@ const handleFilterBySupportArea = (event: ChangeEvent<HTMLSelectElement>) => {
     <DropDownBox 
     items = {items}
     searchTerm = {searchTerm}
-    label = "Find support by area"
+    label = "Find support by :"
     handleFilterBySupportArea={handleFilterBySupportArea}
     />
     <div className="organisations">

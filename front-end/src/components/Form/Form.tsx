@@ -57,7 +57,7 @@ const OrganisationForm = ({ onSubmit }:OrganisationFormProps) => {
       </div>
       <div className="form-group">
         <label htmlFor="logo">Logo URL</label>
-        <input type="text" name="logoURL" value={formValues.logo} onChange={handleChange} required />
+        <input type="text" name="logo" value={formValues.logo} onChange={handleChange} required />
       </div>
       <div className="form-group">
         <label htmlFor="Website link">Website URL</label>

@@ -1,0 +1,37 @@
+@use "../../styles/variables" as *;
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.22rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('../../assets/raven.png') no-repeat center center;
+    background-size: 80%; // Adjust size as needed
+    width: 30rem;
+    height: 30rem;
+    opacity: 0.5; // Adjust opacity as needed
+    z-index: 1;
+  }
+
+  .about__content {
+    position: relative;
+    z-index: 3; // Ensure content appears above the overlay
+    color: $color-white;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 1rem;
+  }
+}

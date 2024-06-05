@@ -9,7 +9,9 @@
 
   .search-box__label {
     font-size: 1.25rem;
-    margin-right: 1.25rem;
+    margin-right: 2rem;
+    color: $color-white;
+    font-family: major mono display;
   }
 
   .search-box__dropdown {
@@ -17,7 +19,7 @@
     padding: 0.3rem;
     font-size: 1rem;
     border: 0.313rem $color-navy solid;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     color: $color-navy;
     width:18rem;
 

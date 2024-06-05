@@ -14,70 +14,81 @@
   text-align: center;
 }
 
-.logo {
-  height: 1.7em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-
-  &_spring {
-    height: 4em;
-    padding-top: 1em;
-    padding-bottom: 0.2em;
-    padding-left: 1em;
-  }
-
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+h1 {
+  font-family: "Major Mono Display";
+  color: $color-white;
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+// * {
+//   color: $color-white;
+// }
 
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, $color-navy 0%, $color-navy-light 100%);
+  position: relative;
 
-.spin {
-  @media (prefers-reduced-motion: no-preference){
-  animation: logo-spin-3d infinite 20s linear;}
-}
-
-.values {
-  margin-top: 4rem;
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; // Adjust to cover more of the page width
+    height: 100%; // Adjust to cover more of the page height
+    background: url('./assets/featherBackground2.jpg') repeat;
+    background-size: cover; // Ensure the background image scales appropriately
+    opacity: 0.19; // Adjust opacity as needed
+    z-index: -1; // Place behind all content
   }
 }
 
-@keyframes logo-spin-3d {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.page-container {
+  position: relative;
+  z-index: 1; // Ensure page content appears above the background
+  min-height: 100vh; // Ensure the page container at least takes up the full viewport height
+  padding: 2rem; // Add padding if necessary
 }
 
 
+// .organisations {
+//   display: flex;
+//   flex-direction: column;
+//   margin: 1rem;
+//   margin-top: 1.2rem;
+
+//   .organisations__content {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: flex-end;
+//     min-height: 10rem;
+//     height: 50rem;
+//   }
+
+//   .organisations__content a {
+//     text-decoration: none;
+//     cursor: pointer;
+//     transition: transform 0.2s;
+//     color: $color-navy;
+
+//     &:hover {
+//       transform: scale(1.05);
+//     }
+//   }
+
+//   .no-results {
+//     font-size: 1.2rem;
+//     color: $color-navy;
+
+//     p a {
+//       color: $color-navy;
+//       text-decoration: underline;
+//     }
+//   }
+// }
+
+// .search-box__dropdown {
+//   font-size: 1.2rem;
+// }
 
 
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}

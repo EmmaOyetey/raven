@@ -1,5 +1,5 @@
-import Nav from "../../components/Nav/Nav"
-import OrganisationCard from "../../components/OrganisationCard/OrganisationCard"
+import Nav from "../../components/Nav/Nav";
+import OrganisationCard from "../../components/OrganisationCard/OrganisationCard";
 import organisationType from "../../types/organisationType";
 import "./Organisations.scss";
 import { Link } from "react-router-dom";
@@ -8,25 +8,26 @@ import OrganisationType from "../../types/organisationType";
 import { ChangeEvent, useState, useEffect } from "react";
 
 type OrganisationProps = {
-  allOrganisations: organisationType [];
+  allOrganisations: organisationType[];
 };
 
 const Organisations = ({ allOrganisations }: OrganisationProps) => {
-const [filteredOrganisations, setFilteredOrganisations] = useState(allOrganisations);
-const [searchTerm, setSearchTerm] =useState<string>("");
+  const [filteredOrganisations, setFilteredOrganisations] = useState(allOrganisations);
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
-const items : string []= [
-  "Careers", 
-  "Creative Arts", 
-  "Curriculum", 
-  "Life Skills", 
-  "Mental Health", 
-  "Physical Activity", 
-  "PSHE", 
-  "Tech"]
-  
-const handleFilterBySupportArea = (event: ChangeEvent<HTMLSelectElement>) => {
-    const selectedTerm =event.target.value;
+  const items: string[] = [
+    "Careers",
+    "Creative Arts",
+    "Curriculum",
+    "Life Skills",
+    "Mental Health",
+    "Physical Activity",
+    "PSHE",
+    "Tech"
+  ];
+
+  const handleFilterBySupportArea = (event: ChangeEvent<HTMLSelectElement>) => {
+    const selectedTerm = event.target.value;
     setSearchTerm(selectedTerm);
   };
 
@@ -48,24 +49,22 @@ const handleFilterBySupportArea = (event: ChangeEvent<HTMLSelectElement>) => {
 
   const convertToCamelCase = (str: string) => {
     return str
-      .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => 
+      .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) =>
         index === 0 ? match.toLowerCase() : match.toUpperCase()
       )
       .replace(/\s+/g, '');
   };
 
-
-
-    return (
-    <>
-    <Nav />
-    <DropDownBox 
-    items = {items}
-    searchTerm = {searchTerm}
-    label = "Find support by :"
-    handleFilterBySupportArea={handleFilterBySupportArea}
-    />
-    <div className="organisations">
+  return (
+    <div className="page-container">
+      <Nav />
+      <DropDownBox 
+        items={items}
+        searchTerm={searchTerm}
+        label="Find support :"
+        handleFilterBySupportArea={handleFilterBySupportArea}
+      />
+      <div className="organisations">
         <div className="organisations__content">
           {filteredOrganisations.length > 0 ? (
             filteredOrganisations.map((organisation) => (
@@ -87,8 +86,8 @@ const handleFilterBySupportArea = (event: ChangeEvent<HTMLSelectElement>) => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
-  
-  export default Organisations;
+
+export default Organisations;

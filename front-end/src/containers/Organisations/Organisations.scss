@@ -9,8 +9,9 @@
   .organisations__content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    min-height: 200px; 
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 10rem; 
     height: 400px; 
     position: relative;
   }
@@ -20,6 +21,10 @@
     cursor: pointer;
     transition: transform 0.2s;
     color: $color-navy; 
+    flex: 1 0 30%;
+    margin: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   .organisations__content a:hover {

@@ -3,13 +3,13 @@
 .organisation-card {
   display: flex;
   flex-direction: column;
-  width: 22rem; // Increased width to accommodate side-by-side layout
+  width: 100%; 
   padding: 1rem;
   box-shadow: 0 0.325rem 0.3rem rgba(0, 0, 0, 0.1);
-  border: 0.1rem solid $color-navy-light;
+  border: 0.1rem solid $color-white;
   border-radius: 0.5rem;
   background-color: $color-navy;
-  margin: 0.8rem;
+  margin: 0.8rem ;
 
   .organisation-card__content {
     width: 100%;

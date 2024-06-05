@@ -1,26 +1,28 @@
-import './App.scss'
+import './App.scss';
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Organisation from './containers/Organisations/Organisations'
-import Home from './containers/Home/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Organisation from './containers/Organisations/Organisations';
+import Home from './containers/Home/Home';
 import CreateOrganisation from './containers/Create/CreateOrganisation';
-const App= () => {
- //const [count, setCount] = useState(0)
+import About from './containers/About/About';
+import OrganisationProfile from './containers/OrganisationProfile/OrganisationProfile';
+import OrganisationType from './types/organisationType';
 
- const fetchAllOrganisations = async () => {
-  try {
-    const response = await fetch('http://localhost:8080/organisations');
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+const App = () => {
+  const fetchAllOrganisations = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/organisations');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
     }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('There was a problem with the fetch operation:', error);
-  }
-};
+  };
 
-const [allOrganisations, setAllOrganisations] = useState([]);
+  const [allOrganisations, setAllOrganisations] = useState<OrganisationType[]>([]);
 
   useEffect(() => {
     const getAllOrganisations = async () => {
@@ -33,15 +35,16 @@ const [allOrganisations, setAllOrganisations] = useState([]);
   return (
     <Router>
       <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/organisations" element={<Organisation allOrganisations = {allOrganisations} />} />
-            <Route path="/organisations/add" element = {<CreateOrganisation />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/organisations" element={<Organisation allOrganisations={allOrganisations} />} />
+        <Route path="/organisations/add" element={<CreateOrganisation />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/organisation/:organisationName" element={<OrganisationProfile allOrganisations={allOrganisations} />} />
       </Routes>
     </Router>
+  );
+};
 
-  )
-}
-
-export default App
+export default App;
 
 

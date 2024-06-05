@@ -13,7 +13,7 @@ type OrganisationType = {
     physicalActivity: boolean;
     pshe:boolean;
     tech: boolean;
-   
+    support_areas?: string[];
  };
 
  export default OrganisationType

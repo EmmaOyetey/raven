@@ -1,0 +1,95 @@
+@use "../../styles/variables" as *;
+
+.organisation-info {
+  &__banner {
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+    background-color: $color-navy-light;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding: 1.5rem;
+    background-color: $color-navy;
+    color: $color-white;
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: -7rem; // To overlap the banner
+
+    @media (max-width: 768px) {
+      margin-top: -5rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: $color-navy;
+
+      &__tagline {
+        font-size: 1rem;
+        font-weight: normal;
+        color: $color-navy;
+      }
+    }
+
+    .close-link {
+      font-size: 1.5rem;
+      color: $color-navy;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $color-navy;
+      }
+    }
+  }
+
+  &__overview,
+  &__websiteURL,
+  &__impactURL {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.4;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $color-navy;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $color-navy-light;
+      }
+    }
+  }
+
+  &__supportAreas {
+    margin-top: 1.5rem;
+
+    &-header {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: $color-navy-light;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $color-navy-light;
+    }
+  }
+}

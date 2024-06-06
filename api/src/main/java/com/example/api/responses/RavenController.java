@@ -34,53 +34,19 @@ public class RavenController {
         return ResponseEntity.ok(organisations);
     }
 
-    @GetMapping("/organisations/count/Careers")
-    public ResponseEntity<Long> countOrganisationsSupportingCareers() {
-        long count = ravenService.countOrganisationsSupportingCareers();
-        return ResponseEntity.ok(count);
+    @GetMapping("/organisations/count/{supportArea}")
+    public ResponseEntity<Long> countOrganisationsBySupportArea(@PathVariable String supportArea) {
+        try {
+            long count = ravenService.countOrganisationsBySupportArea(supportArea);
+            return ResponseEntity.ok(count);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
     }
 
-    @GetMapping("/organisations/count/CreativeArts")
-    public ResponseEntity<Long> countOrganisationsSupportingCreativeArts() {
-        long count = ravenService.countOrganisationsSupportingCreativeArts();
+    @GetMapping("/organisations/countAll")
+    public ResponseEntity<Long> countAllOrganisations() {
+        long count = ravenService.countAllOrganisations();
         return ResponseEntity.ok(count);
     }
-
-    @GetMapping("/organisations/count/Curriculum")
-    public ResponseEntity<Long> countOrganisationsSupportingCurriculum() {
-        long count = ravenService.countOrganisationsSupportingCurriculum();
-        return ResponseEntity.ok(count);
-    }
-
-    @GetMapping("/organisations/count/LifeSkills")
-    public ResponseEntity<Long> countOrganisationsSupportingLifeSkills() {
-        long count = ravenService.countOrganisationsSupportingLifeSkills();
-        return ResponseEntity.ok(count);
-    }
-
-    @GetMapping("/organisations/count/MentalHealth")
-    public ResponseEntity<Long> countOrganisationsSupportingMentalHealth() {
-        long count = ravenService.countOrganisationsSupportingMentalHealth();
-        return ResponseEntity.ok(count);
-    }
-
-    @GetMapping("/organisations/count/PhysicalActivity")
-    public ResponseEntity<Long> countOrganisationsSupportingPhysicalActivity() {
-        long count = ravenService.countOrganisationsSupportingPhysicalActivity();
-        return ResponseEntity.ok(count);
-    }
-
-    @GetMapping("/organisations/count/Pshe")
-    public ResponseEntity<Long> countOrganisationsSupportingPshe() {
-        long count = ravenService.countOrganisationsSupportingPshe();
-        return ResponseEntity.ok(count);
-    }
-
-    @GetMapping("/organisations/count/Tech")
-    public ResponseEntity<Long> countOrganisationsSupportingTech() {
-        long count = ravenService.countOrganisationsSupportingTech();
-        return ResponseEntity.ok(count);
-    }
-
-
 }

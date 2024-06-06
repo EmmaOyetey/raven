@@ -62,7 +62,7 @@
       padding-right: 0.8rem;
 
       &-input {
-        transform: scale(1.3); // Make checkboxes larger
+        transform: scale(1.3); 
       }
 
       &-label {
@@ -71,10 +71,10 @@
       }
 
       @media (max-width: 768px) {
-        flex-direction: column; // Change to single column layout on smaller screens
+        flex-direction: column; 
 
         & {
-          width: 100%; // Full width for single column layout
+          width: 100%; 
         }
       }
     }

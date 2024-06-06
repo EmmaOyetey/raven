@@ -2,11 +2,6 @@
 @use "./styles/typography";
 @use "./styles/variables" as *;
 
-// @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,300,600);
-
-
-
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -19,10 +14,6 @@ h1 {
   color: $color-white;
 }
 
-// * {
-//   color: $color-white;
-// }
-
 body {
   margin: 0;
   padding: 0;
@@ -34,61 +25,22 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; // Adjust to cover more of the page width
-    height: 100%; // Adjust to cover more of the page height
+    width: 100%; 
+    height: 100%; 
     background: url('./assets/featherBackground2.jpg') repeat;
-    background-size: cover; // Ensure the background image scales appropriately
-    opacity: 0.19; // Adjust opacity as needed
-    z-index: -1; // Place behind all content
+    background-size: cover; 
+    opacity: 0.19; 
+    z-index: -1; 
   }
 }
 
 .page-container {
   position: relative;
-  z-index: 1; // Ensure page content appears above the background
-  min-height: 100vh; // Ensure the page container at least takes up the full viewport height
-  padding: 2rem; // Add padding if necessary
+  z-index: 1; 
+  min-height: 100vh; 
+  padding: 2rem; 
 }
 
 
-// .organisations {
-//   display: flex;
-//   flex-direction: column;
-//   margin: 1rem;
-//   margin-top: 1.2rem;
-
-//   .organisations__content {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: flex-end;
-//     min-height: 10rem;
-//     height: 50rem;
-//   }
-
-//   .organisations__content a {
-//     text-decoration: none;
-//     cursor: pointer;
-//     transition: transform 0.2s;
-//     color: $color-navy;
-
-//     &:hover {
-//       transform: scale(1.05);
-//     }
-//   }
-
-//   .no-results {
-//     font-size: 1.2rem;
-//     color: $color-navy;
-
-//     p a {
-//       color: $color-navy;
-//       text-decoration: underline;
-//     }
-//   }
-// }
-
-// .search-box__dropdown {
-//   font-size: 1.2rem;
-// }
 
 

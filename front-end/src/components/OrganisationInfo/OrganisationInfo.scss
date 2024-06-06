@@ -9,9 +9,9 @@
 
   &__banner {
     width: 100%;
-    height: 10rem;
+    height: 8rem;
     overflow: hidden;
-    background-color: $color-navy-light;
+    background-color: $color-white;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -20,8 +20,9 @@
 
   &__close-link {
     font-size: 1.5rem;
-    color: $color-white;
+    color: $color-navy;
     transition: color 0.3s;
+    align-self: baseline;
 
     &:hover {
       color: $color-navy-light;
@@ -61,8 +62,9 @@
     border-radius: 0.6rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 2rem;
-    margin-top: -7rem; // To overlap the banner slightly
+    margin-top: -5rem; 
     text-align: center;
+    border: 2px solid $color-white;
   }
 
   &__support-areas {

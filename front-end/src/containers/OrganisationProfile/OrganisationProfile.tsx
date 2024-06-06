@@ -15,7 +15,7 @@ const OrganisationProfile = ({ allOrganisations }: OrganisationProfileProps) => 
   if (!organisation) {
     return (
       <div>
-        <Nav /> {/* Add the Nav component here */}
+        <Nav /> 
         Organisation not found
       </div>
     );
@@ -23,7 +23,7 @@ const OrganisationProfile = ({ allOrganisations }: OrganisationProfileProps) => 
 
   return (
     <div>
-      <Nav /> {/* Add the Nav component here */}
+      <Nav /> 
       <OrganisationInfo organisation={organisation} />
     </div>
   );

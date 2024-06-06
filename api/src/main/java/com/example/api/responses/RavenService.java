@@ -21,35 +21,30 @@ public class RavenService {
         return organisationRepository.save(organisation);
     }
 
-    public long countOrganisationsSupportingCareers() {
-        return organisationRepository.countOrganisationsSupportingCareers();
+    public long countOrganisationsBySupportArea(String supportArea) {
+        switch (supportArea.toLowerCase()) {
+            case "careers":
+                return organisationRepository.countByCareers(true);
+            case "creativearts":
+                return organisationRepository.countByCreativeArts(true);
+            case "curriculum":
+                return organisationRepository.countByCurriculum(true);
+            case "lifeskills":
+                return organisationRepository.countByLifeSkills(true);
+            case "mentalhealth":
+                return organisationRepository.countByMentalHealth(true);
+            case "physicalactivity":
+                return organisationRepository.countByPhysicalActivity(true);
+            case "pshe":
+                return organisationRepository.countByPshe(true);
+            case "tech":
+                return organisationRepository.countByTech(true);
+            default:
+                throw new IllegalArgumentException("Unknown support area: " + supportArea);
+        }
     }
 
-    public long countOrganisationsSupportingCreativeArts() {
-        return organisationRepository.countOrganisationsSupportingCreativeArts();
-    }
-
-    public long countOrganisationsSupportingCurriculum() {
-        return organisationRepository.countOrganisationsSupportingCurriculum();
-    }
-
-    public long countOrganisationsSupportingLifeSkills() {
-        return organisationRepository.countOrganisationsSupportingLifeSkills();
-    }
-
-    public long countOrganisationsSupportingMentalHealth() {
-        return organisationRepository.countOrganisationsSupportingMentalHealth();
-    }
-
-    public long countOrganisationsSupportingPhysicalActivity() {
-        return organisationRepository.countOrganisationsSupportingPhysicalActivity();
-    }
-
-    public long countOrganisationsSupportingPshe() {
-        return organisationRepository.countOrganisationsSupportingPshe();
-    }
-
-    public long countOrganisationsSupportingTech() {
-        return organisationRepository.countOrganisationsSupportingTech();
+    public long countAllOrganisations() {
+        return organisationRepository.countAllOrganisations();
     }
 }

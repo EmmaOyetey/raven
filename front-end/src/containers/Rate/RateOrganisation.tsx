@@ -24,7 +24,7 @@ const RateOrganisation = () => {
 
     const handleSubmit = async (newRating: RatingsType) => {
         try {
-            const result = await fetch(`/organisation/${parsedOrganisationId}/rate`, {
+            const result = await fetch(`http://localhost:8080//organisation/${parsedOrganisationId}/rate`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

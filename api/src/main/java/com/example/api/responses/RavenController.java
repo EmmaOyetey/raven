@@ -29,7 +29,7 @@ public class RavenController {
         return ResponseEntity.status(HttpStatus.CREATED).body(newOrganisation);
     }
 
-    @PostMapping("/organisation/{organisationId}/rate")
+    @PostMapping("/organisation/rate")
     public ResponseEntity<Rating> createRating(@RequestBody Rating rating) {
         Rating newRating = ravenService.addRating(rating);
         if (newRating != null) {

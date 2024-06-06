@@ -21,4 +21,35 @@ public class RavenService {
         return organisationRepository.save(organisation);
     }
 
+    public long countOrganisationsSupportingCareers() {
+        return organisationRepository.countOrganisationsSupportingCareers();
+    }
+
+    public long countOrganisationsSupportingCreativeArts() {
+        return organisationRepository.countOrganisationsSupportingCreativeArts();
+    }
+
+    public long countOrganisationsSupportingCurriculum() {
+        return organisationRepository.countOrganisationsSupportingCurriculum();
+    }
+
+    public long countOrganisationsSupportingLifeSkills() {
+        return organisationRepository.countOrganisationsSupportingLifeSkills();
+    }
+
+    public long countOrganisationsSupportingMentalHealth() {
+        return organisationRepository.countOrganisationsSupportingMentalHealth();
+    }
+
+    public long countOrganisationsSupportingPhysicalActivity() {
+        return organisationRepository.countOrganisationsSupportingPhysicalActivity();
+    }
+
+    public long countOrganisationsSupportingPshe() {
+        return organisationRepository.countOrganisationsSupportingPshe();
+    }
+
+    public long countOrganisationsSupportingTech() {
+        return organisationRepository.countOrganisationsSupportingTech();
+    }
 }

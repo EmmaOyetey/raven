@@ -3,6 +3,7 @@ package com.example.api.responses;
 //import com.example.api.models.Organisation;
 //import com.example.api.responses.RavenService;
 import com.example.api.models.Organisation;
+import com.example.api.models.Rating;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,16 @@ public class RavenController {
     public ResponseEntity<Organisation> createOrganisation(@RequestBody Organisation organisation) {
         Organisation newOrganisation = ravenService.addOrganisation(organisation);
         return ResponseEntity.status(HttpStatus.CREATED).body(newOrganisation);
+    }
+
+    @PostMapping("/organisation/{organisationId}/rate")
+    public ResponseEntity<Rating> createRating(@RequestBody Rating rating) {
+        Rating newRating = ravenService.addRating(rating);
+        if (newRating != null) {
+            return ResponseEntity.status(HttpStatus.CREATED).body(newRating);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
     }
 
     @GetMapping("/organisations")

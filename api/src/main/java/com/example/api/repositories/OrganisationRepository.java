@@ -12,6 +12,9 @@ import java.util.List;
 
 public interface OrganisationRepository extends JpaRepository<Organisation, Long> {
 
+    Organisation findByName(String name);
+    Organisation findById(long id);
+
     @Query("SELECT COUNT(o) FROM Organisation o WHERE o.careers = :value")
     long countByCareers(@Param("value") boolean value);
 

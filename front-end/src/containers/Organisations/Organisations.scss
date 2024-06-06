@@ -32,11 +32,13 @@
   }
 
   .no-results {
+
     font-size: 1.2rem;
-    color: $color-navy; 
+    color: $color-white; 
+    text-align: center;
 
     p a {
-      color: $color-navy; 
+      color: $color-white; 
       text-decoration: underline;
     }
   }

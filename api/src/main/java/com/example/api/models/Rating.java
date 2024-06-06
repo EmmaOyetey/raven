@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "ratings")
-public class Ratings {
+@Table(name = "rating")
+public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -78,7 +78,7 @@ public class Ratings {
 
     @Override
     public String toString() {
-        return "Ratings{" +
+        return "Rating{" +
                 "id=" + id +
                 ", rating=" + rating +
                 ", comment='" + comment + '\'' +

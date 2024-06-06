@@ -6,11 +6,12 @@ import Nav from '../../components/Nav/Nav';
 
 type OrganisationProfileProps = {
   allOrganisations: OrganisationType[];
+  //organisationId:number;
 };
 
 const OrganisationProfile = ({ allOrganisations }: OrganisationProfileProps) => {
-  const { organisationName } = useParams();
-  const organisation = allOrganisations.find(org => org.name === organisationName);
+  const { organisationId } = useParams();
+  const organisation = allOrganisations.find(org => org.id === Number(organisationId));
 
   if (!organisation) {
     return (

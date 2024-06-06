@@ -7,6 +7,7 @@ import CreateOrganisation from './containers/Create/CreateOrganisation';
 import About from './containers/About/About';
 import OrganisationProfile from './containers/OrganisationProfile/OrganisationProfile';
 import OrganisationType from './types/organisationType';
+import RateOrganisation from './containers/Rate/RateOrganisation';
 
 const App = () => {
   const fetchAllOrganisations = async () => {
@@ -39,7 +40,8 @@ const App = () => {
         <Route path="/organisations" element={<Organisation allOrganisations={allOrganisations} />} />
         <Route path="/organisations/add" element={<CreateOrganisation />} />
         <Route path="/about" element={<About />} />
-        <Route path="/organisation/:organisationName" element={<OrganisationProfile allOrganisations={allOrganisations} />} />
+        <Route path="/organisation/:organisationId" element={<OrganisationProfile allOrganisations={allOrganisations} />} />
+        <Route path="/organisation/:organisationId/rate" element={<RateOrganisation />} />
       </Routes>
     </Router>
   );

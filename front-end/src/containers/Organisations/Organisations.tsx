@@ -68,7 +68,7 @@ const Organisations = ({ allOrganisations }: OrganisationProps) => {
         <div className="organisations__content">
           {filteredOrganisations.length > 0 ? (
             filteredOrganisations.map((organisation) => (
-              <Link to={`/organisation/${organisation.name}`} key={organisation.name}>
+              <Link to={`/organisation/${organisation.id}`} key={organisation.id}>
                 <OrganisationCard
                   name={organisation.name}
                   imageUrl={String(organisation.logo)}

@@ -1,4 +1,3 @@
-import React from "react";
 import "./CreateOrganisation.scss";
 import OrganisationForm from "../../components/Form/Form";
 import OrganisationType from "../../types/organisationType";
@@ -20,7 +19,7 @@ const CreateOrganisation = () => {
     if (result.ok) {
       alert("Organisation added");
       const createdOrganisation = await result.json();
-      navigate("/organisation/" + createdOrganisation.name, { state: createdOrganisation });
+      navigate("/organisation/" + createdOrganisation.id, { state: createdOrganisation });
     } else {
       const message = await result.text();
       alert(message);

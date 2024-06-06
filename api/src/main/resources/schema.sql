@@ -21,3 +21,14 @@ CREATE TABLE `organisation` (
   `tech` BOOLEAN DEFAULT FALSE,
    PRIMARY KEY (`id`)
 );
+
+CREATE TABLE `rating` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `organisation_id` bigint NOT NULL,
+  `rating` int NOT NULL,
+  `comment` varchar(1000) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`organisation_id`) REFERENCES `organisation`(`id`) ON DELETE CASCADE
+);

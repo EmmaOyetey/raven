@@ -1,7 +1,7 @@
 import OrganisationType from "../../types/organisationType";
 import "./OrganisationInfo.scss";
 import { Link, useParams } from "react-router-dom";
-import { useEffect } from "react";
+//import { useEffect } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 
 type OrganisationInfoProps = {
@@ -9,12 +9,12 @@ type OrganisationInfoProps = {
 };
 
 const OrganisationInfo = ({ organisation }: OrganisationInfoProps) => {
-  const { organisationName } = useParams();
-  console.log(organisationName);
+  const { organisationId } = useParams();
+  console.log(organisationId);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [organisationName]);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [organisationId]);
 
   const supportAreas = Object.keys(organisation)
     .filter((key) => organisation[key as keyof OrganisationType] === true)
@@ -55,6 +55,9 @@ const OrganisationInfo = ({ organisation }: OrganisationInfoProps) => {
           <p className="organisation-info__impact-url">
             Find out about their impact: <a href={organisation.impactURL} target="_blank" rel="noopener noreferrer">{organisation.impactURL}</a>
           </p>
+        </div>
+        <div>
+        <p>RATE <a href={`/organisation/${organisation.id}/rate`}>Add an organisation</a>.</p>
         </div>
       </article>
     </>

@@ -4,23 +4,24 @@ import "./RatingsForm.scss";
 
 type RatingsFormProps = {
     onSubmit: (formValues: RatingsType) => void;
-    organisationId: number; // Add the organisationName prop
+    organisationId: number;
 };
 
-const RatingsForm = ({ onSubmit, organisationId}: RatingsFormProps) => {
+const RatingsForm = ({ onSubmit, organisationId }: RatingsFormProps) => {
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState('');
     const [name, setName] = useState('');
 
-    const handleSubmit = async (event: React.ChangeEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const newRating: RatingsType = {
-            organisation: { id: organisationId},
+            organisation: { id: organisationId },
             rating,
             comment,
             name,
             createdAt: new Date().toISOString()
         };
+        console.log({ newRating });
         onSubmit(newRating);
     };
 

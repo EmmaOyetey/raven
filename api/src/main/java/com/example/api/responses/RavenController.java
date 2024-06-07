@@ -29,13 +29,13 @@ public class RavenController {
         return ResponseEntity.status(HttpStatus.CREATED).body(newOrganisation);
     }
 
-    @PostMapping("/organisation/rate")
+    @PostMapping("/organisations/rate")
     public ResponseEntity<Rating> createRating(@RequestBody Rating rating) {
         Rating newRating = ravenService.addRating(rating);
         if (newRating != null) {
             return ResponseEntity.status(HttpStatus.CREATED).body(newRating);
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
@@ -59,5 +59,25 @@ public class RavenController {
     public ResponseEntity<Long> countAllOrganisations() {
         long count = ravenService.countAllOrganisations();
         return ResponseEntity.ok(count);
+    }
+
+    @GetMapping("/organisations/{organisationId}/rate /recent")
+    public ResponseEntity<List<Rating>> getRecentRatingsByOrganisationId(@PathVariable Long organisationId) {
+        List<Rating> recentRatings = ravenService.getRecentRatingsByOrganisationId(organisationId, 5);
+        if (!recentRatings.isEmpty()) {
+            return ResponseEntity.ok(recentRatings);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/{organisationId}/ratings/random")
+    public ResponseEntity<Rating> getRandomRatingByOrganisationId(@PathVariable Long organisationId) {
+        Rating randomRating = ravenService.getRandomRatingByOrganisationId(organisationId);
+        if (randomRating != null) {
+            return ResponseEntity.ok(randomRating);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

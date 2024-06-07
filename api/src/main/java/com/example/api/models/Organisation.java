@@ -3,11 +3,12 @@ package com.example.api.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "organisation")
+
 public class Organisation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
     private String name;
     private String logo;
     private String overview;
@@ -26,7 +27,7 @@ public class Organisation {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

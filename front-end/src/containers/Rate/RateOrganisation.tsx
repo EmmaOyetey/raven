@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Nav from '../../components/Nav/Nav';
 import RatingsForm from '../../components/Form/RatingsForm';
 import RatingsType from '../../types/ratingsType';
@@ -6,11 +6,10 @@ import "./RateOrganisation.scss";
 
 const RateOrganisation = () => {
     const { organisationId } = useParams<{ organisationId?: string }>();
-    console.log(organisationId);
+    const navigate = useNavigate();
 
     // Check if organisationId is undefined and handle accordingly
     if (!organisationId) {
-        // Handle the case where organisationId is undefined
         return (
             <>
                 <Nav />
@@ -24,7 +23,7 @@ const RateOrganisation = () => {
 
     const handleSubmit = async (newRating: RatingsType) => {
         try {
-            const result = await fetch(`http://localhost:8080//organisation/${parsedOrganisationId}/rate`, {
+            const result = await fetch(`http://localhost:8080/organisations/rate`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -33,13 +32,15 @@ const RateOrganisation = () => {
             });
 
             if (result.ok) {
-                // Handle successful response
-                console.log("Rating added successfully");
+                alert("Rating added successfully");
+                const createdRating = await result.json();
+                navigate("/organisation/" + createdRating.organisation.id, { state: createdRating });
             } else {
-                // Handle error response
-                console.error("Failed to add rating");
+                const message = await result.text();
+                alert("Failed to add rating: " + message);
             }
         } catch (error) {
+            alert('Error adding rating');
             console.error('Error adding rating:', error);
         }
     };
@@ -49,7 +50,7 @@ const RateOrganisation = () => {
             <Nav />
             <section>
                 <h2 className="rating__organisation-name">{organisationId}</h2>
-                <RatingsForm organisationId={parsedOrganisationId || 0} onSubmit={handleSubmit} />
+                <RatingsForm organisationId={parsedOrganisationId} onSubmit={handleSubmit} />
             </section>
         </>
     );

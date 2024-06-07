@@ -5,11 +5,14 @@ import com.example.api.models.Rating;
 import com.example.api.repositories.OrganisationRepository;
 import com.example.api.repositories.RatingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.Optional;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class RavenService {
@@ -30,16 +33,19 @@ public class RavenService {
         return organisationRepository.save(organisation);
     }
 
+
     public Rating addRating(Rating rating) {
-        // Check if the organization exists
-        Organisation organisation = organisationRepository.findById(rating.getOrganisation().getId());
-        if (organisation != null) {
+        Long organisationId = rating.getOrganisation().getId();
+        Optional<Organisation> organisationOptional = organisationRepository.findById(organisationId);
+
+        if (organisationOptional.isPresent()) {
+            Organisation organisation = organisationOptional.get();
             rating.setOrganisation(organisation);
             Rating savedRating = ratingRepository.save(rating);
             logger.info("Rating added successfully: {}", savedRating);
             return savedRating;
         } else {
-            logger.error("Organisation not found: {}", rating.getOrganisation().getName());
+            logger.error("Organisation not found: {}", organisationId);
             return null;
         }
     }
@@ -70,4 +76,18 @@ public class RavenService {
     public long countAllOrganisations() {
         return organisationRepository.countAllOrganisations();
     }
+
+    public List<Rating> getRecentRatingsByOrganisationId(Long organisationId, int limit) {
+        return ratingRepository.findTopByOrganisationIdOrderByCreatedAtDesc(organisationId, PageRequest.of(0, limit));
+    }
+
+    public Rating getRandomRatingByOrganisationId(Long organisationId) {
+        List<Rating> ratings = ratingRepository.findByOrganisationId(organisationId);
+        if (ratings.isEmpty()) {
+            return null;
+        }
+        Random random = new Random();
+        return ratings.get(random.nextInt(ratings.size()));
+    }
+
 }

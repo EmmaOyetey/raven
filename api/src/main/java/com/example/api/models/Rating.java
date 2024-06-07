@@ -1,39 +1,40 @@
 package com.example.api.models;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "rating")
 public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "organisation_id", nullable = false)
     private Organisation organisation;
 
-    @Column(nullable = false)
+
     private int rating;
-
-    @Column(nullable = false)
     private String comment;
+    private String name;
 
-    @Column(nullable = false)
-    private String ratedBy;
-
-    @Column(nullable = false)
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public Organisation getOrganisation() {
+        return organisation;
+    }
+
+    public void setOrganisation(Organisation organisation) {
+        this.organisation = organisation;
     }
 
     public int getRating() {
@@ -52,12 +53,12 @@ public class Rating {
         this.comment = comment;
     }
 
-    public String getRatedBy() {
-        return ratedBy;
+    public String getName() {
+        return name;
     }
 
-    public void setRatedBy(String ratedBy) {
-        this.ratedBy = ratedBy;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -68,23 +69,15 @@ public class Rating {
         this.createdAt = createdAt;
     }
 
-    public Organisation getOrganisation() {
-        return organisation;
-    }
-
-    public void setOrganisation(Organisation organisation) {
-        this.organisation = organisation;
-    }
-
     @Override
     public String toString() {
         return "Rating{" +
                 "id=" + id +
+                ", organisation=" + organisation +
                 ", rating=" + rating +
                 ", comment='" + comment + '\'' +
-                ", ratedBy='" + ratedBy + '\'' +
+                ", name='" + name + '\'' +
                 ", createdAt=" + createdAt +
-                ", organisation=" + organisation +
                 '}';
     }
 }

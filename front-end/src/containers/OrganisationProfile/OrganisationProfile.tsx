@@ -12,7 +12,7 @@ type OrganisationProfileProps = {
 const OrganisationProfile = ({ allOrganisations }: OrganisationProfileProps) => {
   const { organisationId } = useParams();
   const organisation = allOrganisations.find(org => org.id === Number(organisationId));
-
+console.log ({organisation});
   if (!organisation) {
     return (
       <div>

@@ -8,7 +8,6 @@ const RateOrganisation = () => {
     const { organisationId } = useParams<{ organisationId?: string }>();
     const navigate = useNavigate();
 
-    // Check if organisationId is undefined and handle accordingly
     if (!organisationId) {
         return (
             <>
@@ -18,7 +17,6 @@ const RateOrganisation = () => {
         );
     }
 
-    // Parse organisationId to number if needed
     const parsedOrganisationId = parseInt(organisationId, 10);
 
     const handleSubmit = async (newRating: RatingsType) => {

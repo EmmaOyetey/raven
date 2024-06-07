@@ -1,26 +1,29 @@
 @use "../../styles/variables" as *;
 
 .organisation-info {
+  position: relative; 
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  // background-color: $color-navy-light;
   color: $color-white;
+  padding: 1rem;
 
   &__banner {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
     width: 100%;
-    height: 8rem;
-    overflow: hidden;
-    background-color: $color-white;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
     padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1; 
   }
 
   &__close-link {
     font-size: 1.5rem;
-    color: $color-navy;
+    color: $color-white;
     transition: color 0.3s;
     align-self: baseline;
 
@@ -29,72 +32,91 @@
     }
   }
 
-  &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 1rem;
-    width: 30rem;
-
-    h2 {
-      font-size: 2rem;
-      margin: 0 0 0 1rem;
-      color: $color-white;
-      padding-left: 2rem;
-    }
-  }
-
-  &__image {
-    width: 6rem;
-    height: 6rem;
-    border-radius: 40%;
-    border: 2px solid $color-white;
-  }
-
   &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
-    max-width: 40rem;
+    max-width: 800px;
     background-color: $color-navy;
     color: $color-white;
     border-radius: 0.6rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 2rem;
-    margin-top: -5rem; 
-    text-align: center;
-    border: 2px solid $color-white;
+    text-align: left;
+    border-bottom: 0.5px solid $color-white;
+    //border-left: 1px solid $color-white;
   }
 
-  &__support-areas {
-    margin-top: 1.5rem;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $color-navy;
 
-    &-header {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+    .organisation-info__image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+      margin-left:auto;
+      border: 2px solid $color-white;
     }
 
-    p {
-      font-size: 1.1rem;
+    .organisation-info__header-details {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
 
-      span {
-        margin: 0 0.5rem;
+      h2 {
+        font-size: 1.5rem;
+        margin: 0;
+        color: $color-white;
+        margin-bottom: 0.5rem;
       }
     }
   }
 
-  &__overview-header {
-    font-size: 1.5rem;
+  &__support-areas {
+    margin-top: 1.5rem;
+    border-bottom: 1px solid $color-navy;
+
+    &-header {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: $color-white;
+    }
+
+    &-list {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+
+      .organisation-info__support-area {
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: $color-navy-light;
+        border-radius: 0.3rem;
+        font-size: 1rem;
+        color: $color-white;
+      }
+    }
+  }
+
+  &__overview-header,
+  &__links-header,
+  &__ratings-header {
+    font-size: 1rem;
+    font-weight: bold;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
+    color: $color-white;
+    font-family: "Major mono display";
   }
 
   &__overview {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.4;
     margin-bottom: 1.5rem;
   }
@@ -102,14 +124,39 @@
   &__website-url,
   &__impact-url {
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.4;
-    color: $color-white;
 
     a {
       color: $color-white;
-      text-decoration: underline;
+      text-decoration: none;
       transition: color 0.3s;
+
+      &:hover {
+        color: $color-dark-burnt-orange;
+      }
+    }
+  }
+
+  &__ratings-info {
+    margin-top: 1rem;
+    color: $color-white;
+    border-bottom: 1px solid $color-navy;
+    padding-bottom: 1rem;
+  }
+
+  &__rate {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+
+    .organisation-info__rate-link {
+      color: $color-white;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-family: "major mono display";
+      font-size: 1rem;
 
       &:hover {
         color: $color-navy-light;

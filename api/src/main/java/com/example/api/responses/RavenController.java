@@ -45,6 +45,16 @@ public class RavenController {
         return ResponseEntity.ok(organisations);
     }
 
+    @GetMapping("/organisations/{organisationId}")
+    public ResponseEntity<Organisation> getOrganisationById(@PathVariable Long organisationId) {
+        try {
+            Organisation fetchedOrganisation = ravenService.getOrganisationById(organisationId);
+            return ResponseEntity.ok(fetchedOrganisation);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+    }
+
     @GetMapping("/organisations/count/{supportArea}")
     public ResponseEntity<Long> countOrganisationsBySupportArea(@PathVariable String supportArea) {
         try {
@@ -80,4 +90,5 @@ public class RavenController {
             return ResponseEntity.notFound().build();
         }
     }
+
 }

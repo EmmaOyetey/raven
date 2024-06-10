@@ -25,9 +25,7 @@ public class RavenService {
     @Autowired
     private RatingRepository ratingRepository;
 
-    public List<Organisation> getAllOrganisations() {
-        return organisationRepository.findAll();
-    }
+ //CREATE
 
     public Organisation addOrganisation(Organisation organisation) {
         return organisationRepository.save(organisation);
@@ -48,6 +46,17 @@ public class RavenService {
             logger.error("Organisation not found: {}", organisationId);
             return null;
         }
+    }
+
+    //READ
+
+    public List<Organisation> getAllOrganisations() {
+        return organisationRepository.findAll();
+    }
+
+    public Organisation getOrganisationById(Long organisationId) {
+        return organisationRepository.findById(organisationId)
+                .orElseThrow(() -> new RuntimeException("Organisation not found with ID: " + organisationId));
     }
 
     public long countOrganisationsBySupportArea(String supportArea) {

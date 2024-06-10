@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import Nav from '../../components/Nav/Nav';
 import RatingsForm from '../../components/Form/RatingsForm';
 import RatingsType from '../../types/ratingsType';
@@ -7,6 +8,27 @@ import "./RateOrganisation.scss";
 const RateOrganisation = () => {
     const { organisationId } = useParams<{ organisationId?: string }>();
     const navigate = useNavigate();
+    const [organisationName, setOrganisationName] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchOrganisationDetails = async () => {
+            try {
+                const response = await fetch(`http://localhost:8080/organisations/${organisationId}`);
+                if (response.ok) {
+                    const organisation = await response.json();
+                    setOrganisationName(organisation.name);
+                } else {
+                    console.error('Failed to fetch organisation details');
+                }
+            } catch (error) {
+                console.error('Error fetching organisation details:', error);
+            }
+        };
+
+        if (organisationId) {
+            fetchOrganisationDetails();
+        }
+    }, [organisationId]);
 
     if (!organisationId) {
         return (
@@ -47,7 +69,9 @@ const RateOrganisation = () => {
         <>
             <Nav />
             <section>
-                <h2 className="rating__organisation-name">{organisationId}</h2>
+                <h2 className="rating__organisation-name">
+                    {organisationName ? organisationName : 'Loading...'}
+                </h2>
                 <RatingsForm organisationId={parsedOrganisationId} onSubmit={handleSubmit} />
             </section>
         </>

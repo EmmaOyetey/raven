@@ -1,6 +1,8 @@
+
 @use "./styles/reset";
 @use "./styles/typography";
 @use "./styles/variables" as *;
+@use "../src/containers/OrganisationProfile/OrganisationProfile.scss"; // Import the OrganisationProfile styles
 
 #root {
   max-width: 1280px;
@@ -36,10 +38,57 @@ body {
 
 .page-container {
   position: relative;
-  z-index: 1; 
-  min-height: 100vh; 
-  padding: 2rem; 
+  z-index: 1;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column; /* Change flex-direction to column */
+  align-items: center;
+  gap: 2rem; // Space between the sections
 }
+
+// @use "./styles/reset";
+// @use "./styles/typography";
+// @use "./styles/variables" as *;
+
+// #root {
+//   max-width: 1280px;
+//   margin: 0 auto;
+//   padding: 2rem;
+//   text-align: center;
+// }
+
+// h1 {
+//   font-family: "Major Mono Display";
+//   color: $color-white;
+// }
+
+// body {
+//   margin: 0;
+//   padding: 0;
+//   background: linear-gradient(135deg, $color-navy 0%, $color-navy-light 100%);
+//   position: relative;
+
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%; 
+//     height: 100%; 
+//     background: url('./assets/featherBackground2.jpg') repeat;
+//     background-size: cover; 
+//     opacity: 0.19; 
+//     z-index: -1; 
+//   }
+// }
+
+// .page-container {
+//   position: relative;
+//   z-index: 1; 
+//   min-height: 100vh; 
+//   padding: 2rem; 
+// }
 
 
 

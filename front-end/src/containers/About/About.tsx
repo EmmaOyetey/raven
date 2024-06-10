@@ -68,7 +68,7 @@ const About = () => {
 
       <div className="about__raven-logo" />
 //
-      <div className=" {*page-container*} about">
+      <div className=" page-container about">
         <div className="about__content">
           <h1>About Us</h1>
           <p>Welcome to our organisation. Here we provide detailed information about our mission, values, and services.</p>

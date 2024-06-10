@@ -1,7 +1,7 @@
 import "./CreateOrganisation.scss";
-import OrganisationForm from "../../components/Form/Form";
+import OrganisationForm from "../../components/Form/OrganisationForm";
 import OrganisationType from "../../types/organisationType";
-import Nav from "../../components/Nav/Nav"
+import Nav from "../../components/Nav/Nav";
 import { useNavigate } from "react-router-dom";
 
 const CreateOrganisation = () => {

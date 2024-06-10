@@ -71,9 +71,12 @@ public class RavenController {
         return ResponseEntity.ok(count);
     }
 
-    @GetMapping("/organisations/{organisationId}/rate /recent")
-    public ResponseEntity<List<Rating>> getRecentRatingsByOrganisationId(@PathVariable Long organisationId) {
-        List<Rating> recentRatings = ravenService.getRecentRatingsByOrganisationId(organisationId, 5);
+    @GetMapping("/organisations/{organisationId}/rate/recent")
+    public ResponseEntity<List<Rating>> getRecentRatingsByOrganisationId(
+            @PathVariable Long organisationId,
+            @RequestParam(value = "limit", defaultValue = "5") int limit) {
+
+        List<Rating> recentRatings = ravenService.getRecentRatingsByOrganisationId(organisationId, limit);
         if (!recentRatings.isEmpty()) {
             return ResponseEntity.ok(recentRatings);
         } else {

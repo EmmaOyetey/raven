@@ -1,0 +1,19 @@
+.organisation-page-container {
+    position: relative;
+    z-index: 1; 
+    min-height: 100vh; 
+
+    padding: 2rem; 
+    display: flex;
+    flex-direction: row; /* Change flex-direction to row */
+    align-items: flex-start; /* Adjust alignment */
+    gap: 2rem; // Space between the organisation info and the carousel
+  }
+  
+  .organisation-info {
+    flex: 1; /* Take up remaining space */
+  }
+  
+  .ratings-container {
+    flex: 1; /* Take up remaining space */
+  }

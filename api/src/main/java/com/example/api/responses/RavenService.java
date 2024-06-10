@@ -87,7 +87,7 @@ public class RavenService {
     }
 
     public List<Rating> getRecentRatingsByOrganisationId(Long organisationId, int limit) {
-        return ratingRepository.findTopByOrganisationIdOrderByCreatedAtDesc(organisationId, PageRequest.of(0, limit));
+        return ratingRepository.findAllByOrganisationIdOrderByCreatedAtDesc(organisationId, PageRequest.of(0, limit));
     }
 
     public Rating getRandomRatingByOrganisationId(Long organisationId) {

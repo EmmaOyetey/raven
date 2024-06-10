@@ -11,6 +11,6 @@ import java.util.List;
     public interface RatingRepository extends JpaRepository<Rating, Long> {
         List<Rating> findByOrganisationId(Long organisationId);
         List<Rating> findByOrganisationName(String organisationName);
-        List<Rating> findTopByOrganisationIdOrderByCreatedAtDesc(Long organisationId, PageRequest pageRequest);
+        List<Rating> findAllByOrganisationIdOrderByCreatedAtDesc(Long organisationId, PageRequest pageRequest);
     }
 

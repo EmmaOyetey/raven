@@ -33,7 +33,7 @@ export default function DrawerAppBar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2, fontFamily: 'Major Mono Display, monospace' }}>
+      <Typography variant="h6" sx={{ my: 2, fontFamily: 'Major Mono Display, monospace', fontSize: '1.5rem' }}>
         RAVEN
       </Typography>
       <Divider />
@@ -41,7 +41,7 @@ export default function DrawerAppBar(props: Props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton component={Link} to={item === 'Home' ? '/' : `/${item.toLowerCase() === 'add' ? 'organisations/add' : item.toLowerCase()}`} sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} sx={{ fontFamily: 'News Cycle, sans-serif' }} />
+              <ListItemText primary={item} sx={{ fontFamily: 'News Cycle, sans-serif', fontSize: '1.25rem' }} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -55,7 +55,7 @@ export default function DrawerAppBar(props: Props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ backgroundColor: '#091a2a' }}>
-        <Toolbar>
+        <Toolbar sx={{ minHeight: 80 }}> {/* Increase height here */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -65,19 +65,19 @@ export default function DrawerAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center' }}> {/* Wrap img in Link */}
+          <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={ravenLogo} alt="Raven Logo" style={{ width: '60px', height: 'auto', marginRight: '10px' }} />
           </Link>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, textAlign: 'left', display: { xs: 'none', sm: 'block' }, fontFamily: 'Major Mono Display, monospace' }}
+            sx={{ flexGrow: 1, textAlign: 'left', display: { xs: 'none', sm: 'block' }, fontFamily: 'Major Mono Display, monospace', fontSize: '1.5rem' }}
           >
             RAVEN
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} component={Link} to={item === 'Home' ? '/' : `/${item.toLowerCase() === 'add' ? 'organisations/add' : item.toLowerCase()}`} sx={{ color: '#fff', fontFamily: 'News Cycle, sans-serif' }}>
+              <Button key={item} component={Link} to={item === 'Home' ? '/' : `/${item.toLowerCase() === 'add' ? 'organisations/add' : item.toLowerCase()}`} sx={{ color: '#fff', fontFamily: 'News Cycle, sans-serif', fontSize: '1.25rem' }}>
                 {item}
               </Button>
             ))}
@@ -101,8 +101,8 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
+      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: { sm: 10, xs: 0 } }}> {/* Adjust the margin top (mt) to account for the taller AppBar */}
+        {/* Content goes here */}
       </Box>
     </Box>
   );

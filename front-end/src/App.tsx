@@ -35,14 +35,19 @@ const App = () => {
 
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/organisations" element={<Organisation allOrganisations={allOrganisations} />} />
-        <Route path="/organisations/add" element={<CreateOrganisation />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/organisation/:organisationId" element={<OrganisationProfile allOrganisations={allOrganisations} />} />
-        <Route path="/organisation/:organisationId/rate" element={<RateOrganisation />} />
-      </Routes>
+      <div className="page__body">
+        <div className="page__background"></div>
+        <div className="page__content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/organisations" element={<Organisation allOrganisations={allOrganisations} />} />
+            <Route path="/organisations/add" element={<CreateOrganisation />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/organisation/:organisationId" element={<OrganisationProfile allOrganisations={allOrganisations} />} />
+            <Route path="/organisation/:organisationId/rate" element={<RateOrganisation />} />
+          </Routes>
+        </div>
+      </div>
     </Router>
   );
 };

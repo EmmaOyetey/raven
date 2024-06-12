@@ -55,7 +55,7 @@ export default function DrawerAppBar(props: Props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ backgroundColor: '#091a2a' }}>
-        <Toolbar sx={{ minHeight: 80 }}> {/* Increase height here */}
+        <Toolbar sx={{ minHeight: 80 }}> 
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -66,12 +66,12 @@ export default function DrawerAppBar(props: Props) {
             <MenuIcon />
           </IconButton>
           <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={ravenLogo} alt="Raven Logo" style={{ width: '60px', height: 'auto', marginRight: '10px' }} />
+            <img src={ravenLogo} alt="Raven Logo" style={{ width: '70px', height: 'auto', marginRight: '15px' }} />
           </Link>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, textAlign: 'left', display: { xs: 'none', sm: 'block' }, fontFamily: 'Major Mono Display, monospace', fontSize: '1.5rem' }}
+            sx={{ flexGrow: 1, textAlign: 'left', display: { xs: 'none', sm: 'block' }, fontFamily: 'Major Mono Display, monospace', fontSize: '1.8rem' }}
           >
             RAVEN
           </Typography>
@@ -101,8 +101,7 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: { sm: 10, xs: 0 } }}> {/* Adjust the margin top (mt) to account for the taller AppBar */}
-        {/* Content goes here */}
+      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: { sm: 5, xs: 0 } }}> 
       </Box>
     </Box>
   );

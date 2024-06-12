@@ -4,6 +4,8 @@ import rightArrow from "../../assets/right-arrow.png";
 import RatingCard from "../RatingCard/RatingCard";
 import "./Carousel.scss";
 import RatingsType from "../../types/ratingsType"; // Importing RatingsType
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 type CarouselProps = {
   ratings: RatingsType[];
@@ -13,23 +15,11 @@ const Carousel = ({ ratings }: CarouselProps) => {
   const [counter, setCounter] = useState<number>(0);
 
   const handleIncrement = () => {
-    if (counter === ratings.length - 1) {
-      setCounter(0);
-    } else {
-      setCounter(counter + 1);
-    }
-    console.log("Increment triggered. Counter:", counter);
-    console.log("Ratings array:", ratings);
+    setCounter((counter + 1) % ratings.length);
   };
 
   const handleDecrement = () => {
-    if (counter === 0) {
-      setCounter(ratings.length - 1);
-    } else {
-      setCounter(counter - 1);
-    }
-    console.log("Decrement triggered. Counter:", counter);
-    console.log("Ratings array:", ratings);
+    setCounter((counter - 1 + ratings.length) % ratings.length);
   };
 
   if (ratings.length === 0) {
@@ -43,7 +33,7 @@ const Carousel = ({ ratings }: CarouselProps) => {
         aria-label="Navigate left"
         onClick={handleDecrement}
       >
-        <img src={leftArrow} alt="Left arrow to navigate carousel" />
+        <ArrowBackIosIcon style={{ color: "white" }} />
       </button>
       <div className="carousel__content">
         <RatingCard {...ratings[counter]} />
@@ -53,10 +43,11 @@ const Carousel = ({ ratings }: CarouselProps) => {
         aria-label="Navigate right"
         onClick={handleIncrement}
       >
-        <img src={rightArrow} alt="Right arrow to navigate carousel" />
+        <ArrowForwardIosIcon style={{ color: "white" }} />
       </button>
     </div>
   );
 };
 
 export default Carousel;
+

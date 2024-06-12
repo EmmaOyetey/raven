@@ -1,26 +1,32 @@
+
+@use "../../styles/variables" as *;
+
 .carousel {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  padding: 0 2rem; 
 
   &__arrow {
-     background: none;
-    border: none;
-     cursor: pointer;
-     
+    background: none;
+    border:none;
+    cursor: pointer;
+    position: absolute;
     
-    // &--left {
-    //   position: absolute;
-    //   left:0 ;
-    // }
+    
+    &--left {
+      left: 0; 
+    }
 
-    // &--right {
-    //   position: absolute;
-    //   right: 0;
-    //   margin-left: 3rem;
-    // }
+    &--right {
+      right: 0; 
+    }
   }
 
-
+  &__content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
 }

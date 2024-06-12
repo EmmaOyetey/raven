@@ -63,44 +63,41 @@ const About = () => {
   }, []);
 
   return (
-    <div className="about-background">
+    <>
       <Nav />
-
       <div className="about__raven-logo" />
-//
-      <div className=" page-container about">
-        <div className="about__content">
-          <h1>About Us</h1>
-          <p>Welcome to our organisation. Here we provide detailed information about our mission, values, and services.</p>
-          <h2>The Number of Organisations listed, Supporting </h2>
-          {loading ? (
-            <p>Loading...</p>
-          ) : (
-            <ul>
-              <li>Careers : {counts.Careers ?? 'N/A'}</li>
-              <li>Creative Arts : {counts.CreativeArts ?? 'N/A'}</li>
-              <li>Curriculum : {counts.Curriculum ?? 'N/A'}</li>
-              <li>Life Skills : {counts.LifeSkills ?? 'N/A'}</li>
-              <li>Mental Health : {counts.MentalHealth ?? 'N/A'}</li>
-              <li>Physical Activity : {counts.PhysicalActivity ?? 'N/A'}</li>
-              <li>PSHE : {counts.Pshe ?? 'N/A'}</li>
-              <li>Tech : {counts.Tech ?? 'N/A'}</li>
-              <li className = "total-org-count">Total Organisations: {totalOrgCount ?? 'N/A'}</li>
-            </ul>
-          )}
-
-          <p>Our aim is to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti</p>
-          <p>         
-          </p>
-          <p>
-            Praesent sed arcu et velit cursus pretium. Sed ullamcorper urna at quam varius, non facilisis nunc tristique. Nullam ac magna non elit mollis tempus. Proin fermentum, urna id feugiat vulputate, non tristique risus quam vel nulla. Donec consectetur, arcu ut tincidunt vulputate, nisl nunc condimentum arcu, id laoreet sapien magna nec erat. Cras ac luctus odio. Quisque eget libero nec risus efficitur sagittis.
-          </p>
-          <p>
-            Suspendisse potenti. Aenean mollis vestibulum urna, nec lacinia ex faucibus at. Aliquam erat volutpat. 
-          </p>
-        </div>
+        <div className=" page-container--about ">
+          <div className="about-content">
+            <h1>About Us</h1>
+            <p className = "about-content__overview">Welcome to our organisation. Here we provide detailed information about our mission, values, and services.</p>
+            <div className = "about-content__support-numbers">
+              <p className = "total-org-count">Currently we have <span>{totalOrgCount ?? 'N/A'}</span> Organisations Listed</p>
+                <h3>By Area Of Support Offered: </h3>
+                  <div className = "about-content__table">
+                    {loading ? (
+                      <p>Loading...</p>
+                    ) : (
+                      <ul className = "about-content__list">
+                        <li className = "about-content__item">Careers : {counts.Careers ?? 'N/A'}</li>
+                        <li className = "about-content__item">Creative Arts : {counts.CreativeArts ?? 'N/A'}</li>
+                        <li className = "about-content__item">Curriculum : {counts.Curriculum ?? 'N/A'}</li>
+                        <li className = "about-content__item">Life Skills : {counts.LifeSkills ?? 'N/A'}</li>
+                        <li className = "about-content__item">Mental Health : {counts.MentalHealth ?? 'N/A'}</li>
+                        <li className = "about-content__item">Physical Activity : {counts.PhysicalActivity ?? 'N/A'}</li>
+                        <li className = "about-content__item">PSHE : {counts.Pshe ?? 'N/A'}</li>
+                        <li className = "about-content__item">Tech : {counts.Tech ?? 'N/A'}</li>
+                      </ul>
+                    )}  
+                  </div>  
+            </div>
+            <div className = "about-content__info" >
+              <p> Our aim is to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti</p>
+              <p>Praesent sed arcu et velit cursus pretium. Sed ullamcorper urna at quam varius, non facilisis nunc tristique. Nullam ac magna non elit mollis tempus. Proin fermentum, urna id feugiat vulputate, non tristique risus quam vel nulla. Donec consectetur, arcu ut tincidunt vulputate, nisl nunc condimentum arcu, id laoreet sapien magna nec erat. Cras ac luctus odio. Quisque eget libero nec risus efficitur sagittis.</p>
+              <p>Suspendisse potenti. Aenean mollis vestibulum urna, nec lacinia ex faucibus at. Aliquam erat volutpat.</p>
+            </div>
+          </div>
       </div>
-    </div>
+    </>
   );
 };
 

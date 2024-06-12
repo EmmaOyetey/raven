@@ -1,22 +1,24 @@
 @use "../../styles/variables" as *;
 
-.organisations {
+.page-container--organisations {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 2rem;
   display: flex;
-  flex-direction: column;
-  margin: 1rem;
-  margin-top: 1.2rem;
-
-  .organisations__content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    min-height: 10rem; 
-    height: 400px; 
-    position: relative;
+  flex-direction: column; 
+  align-items: center;
+  gap: 2rem; 
   }
 
-  .organisations__content a {
+
+.organisations-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &__results a {
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.2s;
@@ -26,23 +28,28 @@
     margin-left: 1rem;
     margin-right: 1rem;
   }
-
-  .organisations__content a:hover {
+  
+  &__results a:hover {
     transform: scale(1.05);
   }
 
-  .no-results {
+  &__no-results {
 
     font-size: 1.2rem;
     color: $color-white; 
     text-align: center;
-
+  
     p a {
       color: $color-white; 
       text-decoration: underline;
+      
     }
   }
 }
+
+
+
+
 
 .search-box__dropdown {
   font-size: 1.2rem;

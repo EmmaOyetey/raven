@@ -56,37 +56,40 @@ const Organisations = ({ allOrganisations }: OrganisationProps) => {
   };
 
   return (
-    <div className="page-container">
+    <>
       <Nav />
-      <DropDownBox 
-        items={items}
-        searchTerm={searchTerm}
-        label="Find support :"
-        handleFilterBySupportArea={handleFilterBySupportArea}
-      />
-      <div className="organisations">
-        <div className="organisations__content">
-          {filteredOrganisations.length > 0 ? (
-            filteredOrganisations.map((organisation) => (
-              <Link to={`/organisation/${organisation.id}`} key={organisation.id}>
-                <OrganisationCard
-                  name={organisation.name}
-                  imageUrl={String(organisation.logo)}
-                  overview={organisation.overview}
-                />
-              </Link>
-            ))
-          ) : (
-            <div className="no-results">
-              <p>No organisations found matching the selected support area.</p>
-              <p>
-                You can <a href="/organisations/add">add an organisation</a>.
-              </p>
-            </div>
-          )}
+      <div className="page-container--organisations">
+        <h1>Explore Organisations</h1>
+        <DropDownBox 
+          items={items}
+          searchTerm={searchTerm}
+          label="Find support :"
+          handleFilterBySupportArea={handleFilterBySupportArea}
+        />
+        <div className="organisations-content">
+          <div className="organisations-content__results">
+            {filteredOrganisations.length > 0 ? (
+              filteredOrganisations.map((organisation) => (
+                <Link to={`/organisation/${organisation.id}`} key={organisation.id}>
+                  <OrganisationCard
+                    name={organisation.name}
+                    imageUrl={String(organisation.logo)}
+                    overview={organisation.overview}
+                  />
+                </Link>
+              ))
+            ) : (
+              <div className="organisations-content__no-results">
+                <p>No organisations found matching the selected support area.</p>
+                <p>
+                  You can<a href="/organisations/add"><span style={{ fontFamily: 'Major Mono Display, monospace' }}>Add an Organisation</span></a>
+                </p>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
     </div>
+    </>
   );
 };
 

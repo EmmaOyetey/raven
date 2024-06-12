@@ -1,34 +1,26 @@
 .carousel {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
 
   &__arrow {
-    background: none;
+     background: none;
     border: none;
-    cursor: pointer;
-    padding: 0;
+     cursor: pointer;
+     
+    
+    // &--left {
+    //   position: absolute;
+    //   left:0 ;
+    // }
 
-    &--left {
-      position: absolute;
-      left: 0;
-    }
-
-    &--right {
-      position: absolute;
-      right: 0;
-    }
+    // &--right {
+    //   position: absolute;
+    //   right: 0;
+    //   margin-left: 3rem;
+    // }
   }
 
-  // &__content {
-  //   //max-width: 800px; // Adjust as needed
-  //   //text-align: center;
-  //   //margin: 0 2rem; // Space for arrows
-  // }
 
-  // p {
-  //   font-size: 1.2rem;
-  //   color: navy;
-  // }
 }

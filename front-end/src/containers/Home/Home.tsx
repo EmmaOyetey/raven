@@ -25,8 +25,8 @@ const Home =() => {
 return (
     <>
     <Nav/>
-    <div className="page-container">
-      <div>
+    <div className="page-container--home-page">
+      <div className = "home__image-container">
       <Link to="/organisations"> 
         <img className = "logo_raven spin"
             src={ravenLogo} 
@@ -34,15 +34,17 @@ return (
             />
         </Link>
       </div>
-      <div>
+      <div className = "home-content">
         <h1>RAVEN</h1>
-        <p className = "intro">Providing access to information on charitable and non profit organiastions who support young people.</p>
-        <p className = "link">Click the <span style={{ fontFamily: 'Major Mono Display, monospace' }}>RAVEN</span> to <span style={{ fontFamily: 'Major Mono Display, monospace' }}>SEE</span></p>      
+          <p className = "home-content__intro">Providing access to information on charitable and non profit organiastions who support young people.</p>
+          <p className = "home-content__link">Click the <span style={{ fontFamily: 'Major Mono Display, monospace' }}>RAVEN</span> to <span style={{ fontFamily: 'Major Mono Display, monospace' }}>SEE</span></p>      
+        <div className = "home-content__values">
+          <p>ACCESSIBILITY</p>
+          <p>TRANPARENCY</p>
+          <p>OWNERSHIP</p>
+        </div>
       </div>
-
-      <p className ="values"> ACCESSIBILITY  TRANPARENCY  OWNERSHIP</p>
-      </div>
-    
+    </div>
   </>  
 )
 

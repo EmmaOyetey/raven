@@ -29,8 +29,8 @@ const CreateOrganisation = () => {
   return (
     <>
       <Nav />
-      <section className="create-organisation">
-        <h2 className="create-organisation__title">Add an Organisation</h2>
+      <h1 className="create-organisation__title">Add an Organisation</h1>
+      <section className="create-organisation"> 
         <OrganisationForm onSubmit={handleSubmit} />
       </section>
     </>

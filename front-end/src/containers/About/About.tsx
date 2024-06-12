@@ -66,9 +66,9 @@ const About = () => {
     <>
       <Nav />
       <div className="about__raven-logo" />
+        <h1>About Us</h1>
         <div className=" page-container--about ">
           <div className="about-content">
-            <h1>About Us</h1>
             <p className = "about-content__overview">Welcome to our organisation. Here we provide detailed information about our mission, values, and services.</p>
             <div className = "about-content__support-numbers">
               <p className = "total-org-count">Currently we have <span>{totalOrgCount ?? 'N/A'}</span> Organisations Listed</p>

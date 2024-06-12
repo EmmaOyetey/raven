@@ -2,8 +2,6 @@
     position: relative;
     z-index: 1; 
     min-height: 100vh; 
-
-    padding: 2rem; 
     display: flex;
     flex-direction: row; /* Change flex-direction to row */
     align-items: flex-start; /* Adjust alignment */
@@ -11,9 +9,10 @@
   }
   
   .organisation-info {
-    flex: 1; /* Take up remaining space */
+    flex: 2.3; 
   }
   
   .ratings-container {
-    flex: 1; /* Take up remaining space */
+    flex: 1; 
+    margin-top: 1.5rem;
   }

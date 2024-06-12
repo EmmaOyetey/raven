@@ -3,36 +3,46 @@
 .rating-card {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   padding: 1rem;
-  box-shadow: 0 0.325rem 0.3rem rgba(0, 0, 0, 0.1);
+  //box-shadow: 0 0.325rem 0.3rem rgba(0, 0, 0, 0.1);
   border: 0.1rem solid $color-white;
   border-radius: 0.5rem;
   background-color: $color-navy;
   margin: 0.8rem;
+  width: 100%;
+  text-align: left;
 
-  .rating-card__content {
-    width: 100%;
-    text-align: left;
-
-    .rating-card__header {
+ &__star-rating {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+     
 
-      .rating-card__name {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: $color-white;
-      }
+      // .rating-card__name {
+      //   font-size: 1.2rem;
+      //   font-weight: 600;
+      //   color: $color-white;
+      // }
     }
 
-    .rating-card__abrv-info {
+    
+//   &__content {
+//     width: 100%;
+//     text-align: left;
+// }
+   
+
+    &__abrv-info {
       font-size: 0.9rem;
       font-weight: 500;
       color: $color-white;
       margin-bottom: 0.5rem;
     }
-  }
+
+    &__name {
+      color: $color-blue;
+    }
+  
 }

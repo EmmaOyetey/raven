@@ -13,25 +13,27 @@
 
 
 .organisations-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    // align-items: flex-start;
+    // margin-bottom: rem;
 
-  &__results a {
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.2s;
-    color: $color-navy; 
-    flex: 1 0 30%;
-    margin: 0.5rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+  &__results {
+    //text-decoration: none;
+    //cursor: pointer;
+    //transition: transform 0.2s;
+    //color: $color-navy; 
+    //flex: 1 0 30%;
+    margin: 1.5rem;
+    // margin-left: 1.5rem;
+    // margin-right: 1.5rem;
+    // margin-bottom: 1.3rem;
   }
   
-  &__results a:hover {
-    transform: scale(1.05);
-  }
+  // a:hover {
+  //   transform: scale(1.05);
+  // }
 
   &__no-results {
 
@@ -39,18 +41,15 @@
     color: $color-white; 
     text-align: center;
   
-    p a {
+  
+     p a {
       color: $color-white; 
       text-decoration: underline;
-      
     }
   }
 }
 
 
-
-
-
-.search-box__dropdown {
-  font-size: 1.2rem;
-}
+// .search-box__dropdown {
+//   font-size: 1.3rem;
+// }

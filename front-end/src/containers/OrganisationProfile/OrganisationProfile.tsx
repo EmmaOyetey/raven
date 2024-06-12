@@ -50,15 +50,19 @@ const OrganisationProfile = ({ allOrganisations }: OrganisationProfileProps) => 
   }
 
   return (
-    <div className="organisation-page-container">
+    <>
       <Nav /> 
-      <div className="organisation-info">
-        <OrganisationInfo organisation={organisation} />
+      <h1>Organisation Profile</h1>
+      <div className="organisation-page-container">
+        
+        <div className="organisation-info">
+          <OrganisationInfo organisation={organisation} />
+        </div>
+        <div className="ratings-container">
+          <Carousel ratings={ratings} />
+        </div>
       </div>
-      <div className="ratings-container">
-        <Carousel ratings={ratings} />
-      </div>
-    </div>
+    </>
   );
 };
 

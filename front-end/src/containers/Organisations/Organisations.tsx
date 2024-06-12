@@ -58,18 +58,18 @@ const Organisations = ({ allOrganisations }: OrganisationProps) => {
   return (
     <>
       <Nav />
+      <h1>Explore Organisations</h1>
       <div className="page-container--organisations">
-        <h1>Explore Organisations</h1>
         <DropDownBox 
           items={items}
           searchTerm={searchTerm}
           label="Find support :"
           handleFilterBySupportArea={handleFilterBySupportArea}
-        />
+        />    
         <div className="organisations-content">
-          <div className="organisations-content__results">
             {filteredOrganisations.length > 0 ? (
               filteredOrganisations.map((organisation) => (
+                <div className="organisations-content__results">
                 <Link to={`/organisation/${organisation.id}`} key={organisation.id}>
                   <OrganisationCard
                     name={organisation.name}
@@ -77,18 +77,19 @@ const Organisations = ({ allOrganisations }: OrganisationProps) => {
                     overview={organisation.overview}
                   />
                 </Link>
+              </div>  
               ))
             ) : (
               <div className="organisations-content__no-results">
                 <p>No organisations found matching the selected support area.</p>
                 <p>
-                  You can<a href="/organisations/add"><span style={{ fontFamily: 'Major Mono Display, monospace' }}>Add an Organisation</span></a>
+                  You can <a href="/organisations/add"><span style={{ fontFamily: 'Major Mono Display, monospace' }}> Add an Organisation</span></a>
                 </p>
               </div>
             )}
-          </div>
-        </div>
-    </div>
+            </div>
+          
+      </div>
     </>
   );
 };

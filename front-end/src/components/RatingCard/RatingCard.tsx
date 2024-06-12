@@ -21,17 +21,16 @@ const RatingCard = ({ rating, comment, name }: RatingCardProps) => {
 
   return (
     <div className="rating-card">
-      <div className="rating-card__content">
-        <div className="rating-card__header">
+        <div className="rating-card__star-rating">
           <Box component="fieldset" borderColor="transparent" sx={{ display: 'flex', alignItems: 'center' }}>
-            <Typography component="legend" sx={{ mr: 2 }}>Rating</Typography>
+            
             <Rating name="read-only" value={safeRating} readOnly sx={{ color: 'gold', fontSize: '2rem' }} />
           </Box>
         </div>
         <p className="rating-card__abrv-info">{truncatedComment}</p>
         <p className="rating-card__name">{name}</p>
-      </div>
     </div>
+    
   );
 };
 

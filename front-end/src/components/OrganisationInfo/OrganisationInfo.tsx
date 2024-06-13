@@ -67,7 +67,7 @@ const OrganisationInfo = ({ organisation }: OrganisationInfoProps) => {
       
               <div className="organisation-info__rate">
               <p>
-                <span style={{ fontFamily: 'Major Mono Display' }}>RATE</span> This Organisation:{' '}
+                <span style={{ fontFamily: 'Major Mono Display', fontSize: '1.5rem' }}>RATE</span> This Organisation:{' '}
                 <Link to={`/organisation/${organisation.id}/rate`} className="organisation-info__rate-link">Here</Link>.
               </p>
               </div>

@@ -68,7 +68,7 @@ const RateOrganisation = () => {
     return (
         <>
             <Nav />
-            <section>
+            <section className = "page-container--rate">
                 <h2 className="rating__organisation-name">
                     {organisationName ? organisationName : 'Loading...'}
                 </h2>

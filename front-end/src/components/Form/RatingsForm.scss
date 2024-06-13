@@ -3,22 +3,27 @@
 .ratings-form {
     display: flex;
     flex-direction: column;
-    max-width: 35rem;
+    width: 40rem;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid $color-white;
     border-radius: 0.6rem;
     background-color: $color-navy;
     color: $color-white;
+
+    &__title{
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+    }
   
     &__group {
       margin-bottom: 0.7rem;
   
       &-label {
         display: block;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.7rem;
         font-weight: bold;
-        font-size: 1rem;
+        font-size: 1.4rem;
   
         &--large-margin {
           margin-bottom: 1.7rem;
@@ -32,10 +37,10 @@
         padding: 0.7rem;
         border: 0.1rem solid #ccc;
         border-radius: 0.1rem;
-        color: $color-white; // Adjust color if necessary
-        background-color: $color-navy; // Adjust background color if necessary
-        font-family: 'Major Mono Display'; // Adjust font family if necessary
-        font-size: 1rem; // Adjust font size if necessary
+        color: $color-white; 
+        background-color: $color-navy; 
+        font-family: 'Major Mono Display'; 
+        font-size: 1rem; 
       }
     }
   
@@ -46,9 +51,10 @@
       border-radius: 0.7rem;
       background-color: $color-navy-light;
       color: $color-white;
-      font-family: 'Major Mono Display'; // Adjust font family if necessary
-      font-size: 1rem; // Adjust font size if necessary
+      font-family: 'Major Mono Display'; 
+      font-size: 1rem; 
       cursor: pointer;
+      margin-top: 1rem;
   
       &:hover {
         background-color: $color-navy-light;

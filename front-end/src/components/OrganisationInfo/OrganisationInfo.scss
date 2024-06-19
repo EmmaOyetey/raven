@@ -6,7 +6,6 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  // background-color: $color-navy-light;
   color: $color-white;
   padding: 1rem;
 
@@ -36,14 +35,16 @@
   &__content {
     width: 100%;
     max-width: 800px;
-    background-color: $color-navy;
+    background-color: rgba(255, 255, 255, 0.08); /* More transparency */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
     color: $color-white;
     border-radius: 0.6rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     text-align: left;
-    border-bottom: 0.5px solid $color-white;
-    border-left: 1px solid $color-white;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1); /* Slightly more transparent border */
+    border-left: 1px solid rgba(255, 255, 255, 0.1); /* Slightly more transparent border */
   }
 
   &__header {
@@ -51,14 +52,14 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
-    border-bottom: 1px solid $color-navy;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Slightly more transparent border */
 
     .organisation-info__image {
       width: 80px;
       height: 80px;
       border-radius: 50%;
       margin-right: 1.5rem;
-      margin-left:auto;
+      margin-left: auto;
       border: 2px solid $color-white;
     }
 
@@ -78,7 +79,7 @@
 
   &__support-areas {
     margin-top: 1.5rem;
-    border-bottom: 1px solid $color-navy;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Slightly more transparent border */
 
     &-header {
       font-size: 1.2rem;
@@ -97,7 +98,7 @@
         margin-right: 1rem;
         margin-bottom: 0.5rem;
         padding: 0.5rem 1rem;
-        background-color: $color-navy-light;
+        background-color: $color-navy-light; /* Retain blue color */
         border-radius: 0.3rem;
         font-size: 1rem;
         color: $color-white;
@@ -142,12 +143,11 @@
   &__ratings-info {
     margin-top: 1rem;
     color: $color-white;
-    border-bottom: 1px solid $color-navy;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Slightly more transparent border */
     padding-bottom: 1rem;
   }
 
   &__rate {
-    //margin-top: 0.5rem;
     padding-top: 1rem;
     display: flex;
     justify-content: flex-end;
@@ -156,7 +156,7 @@
       color: $color-white;
       text-decoration: none;
       transition: color 0.3s;
-      font-family: "major mono display";
+      font-family: "Major mono display";
       font-size: 1.7rem;
 
       &:hover {
@@ -165,3 +165,171 @@
     }
   }
 }
+
+// @use "../../styles/variables" as *;
+
+// .organisation-info {
+//   position: relative; 
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   min-height: 100vh;
+//   // background-color: $color-navy-light;
+//   color: $color-white;
+//   padding: 1rem;
+
+//   &__banner {
+//     position: absolute; 
+//     top: 0; 
+//     left: 0; 
+//     width: 100%;
+//     padding: 1rem;
+//     display: flex;
+//     justify-content: flex-end;
+//     z-index: 1; 
+//   }
+
+//   &__close-link {
+//     font-size: 1.7rem;
+//     color: $color-white;
+//     transition: color 0.3s;
+//     align-self: baseline;
+//     margin: 1rem;
+
+//     &:hover {
+//       color: $color-navy-light;
+//     }
+//   }
+
+//   &__content {
+//     width: 100%;
+//     max-width: 800px;
+//     background-color: $color-navy;
+//     color: $color-white;
+//     border-radius: 0.6rem;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     padding: 2rem;
+//     text-align: left;
+//     border-bottom: 0.5px solid $color-white;
+//     border-left: 1px solid $color-white;
+//   }
+
+//   &__header {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     margin-bottom: 1rem;
+//     border-bottom: 1px solid $color-navy;
+
+//     .organisation-info__image {
+//       width: 80px;
+//       height: 80px;
+//       border-radius: 50%;
+//       margin-right: 1.5rem;
+//       margin-left:auto;
+//       border: 2px solid $color-white;
+//     }
+
+//     .organisation-info__header-details {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: flex-start;
+
+//       h2 {
+//         font-size: 1.5rem;
+//         margin: 0;
+//         color: $color-white;
+//         margin-bottom: 0.5rem;
+//       }
+//     }
+//   }
+
+//   &__support-areas {
+//     margin-top: 1.5rem;
+//     border-bottom: 1px solid $color-navy;
+
+//     &-header {
+//       font-size: 1.2rem;
+//       font-weight: bold;
+//       margin-bottom: 0.5rem;
+//       color: $color-white;
+//     }
+
+//     &-list {
+//       list-style-type: none;
+//       padding: 0;
+//       display: flex;
+//       flex-wrap: wrap;
+
+//       .organisation-info__support-area {
+//         margin-right: 1rem;
+//         margin-bottom: 0.5rem;
+//         padding: 0.5rem 1rem;
+//         background-color: $color-navy-light;
+//         border-radius: 0.3rem;
+//         font-size: 1rem;
+//         color: $color-white;
+//       }
+//     }
+//   }
+
+//   &__overview-header,
+//   &__links-header,
+//   &__ratings-header {
+//     font-size: 1rem;
+//     font-weight: bold;
+//     margin-top: 1.5rem;
+//     margin-bottom: 0.5rem;
+//     color: $color-white;
+//     font-family: "Major mono display";
+//   }
+
+//   &__overview {
+//     font-size: 1rem;
+//     line-height: 1.4;
+//     margin-bottom: 1.5rem;
+//   }
+
+//   &__website-url,
+//   &__impact-url {
+//     margin-bottom: 1rem;
+//     font-size: 1rem;
+//     line-height: 1.4;
+
+//     a {
+//       color: $color-white;
+//       text-decoration: none;
+//       transition: color 0.3s;
+
+//       &:hover {
+//         color: $color-dark-burnt-orange;
+//       }
+//     }
+//   }
+
+//   &__ratings-info {
+//     margin-top: 1rem;
+//     color: $color-white;
+//     border-bottom: 1px solid $color-navy;
+//     padding-bottom: 1rem;
+//   }
+
+//   &__rate {
+//     //margin-top: 0.5rem;
+//     padding-top: 1rem;
+//     display: flex;
+//     justify-content: flex-end;
+
+//     .organisation-info__rate-link {
+//       color: $color-white;
+//       text-decoration: none;
+//       transition: color 0.3s;
+//       font-family: "major mono display";
+//       font-size: 1.7rem;
+
+//       &:hover {
+//         color: $color-navy-light;
+//       }
+//     }
+//   }
+// }

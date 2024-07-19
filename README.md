@@ -3,7 +3,9 @@
 ## A Directory of Social Purpose Organisations providing services for Young People
 
 ### Overview
-Raven is a full-stack application built to enable users to search through social purpose organisations based on the kind of support they offer to young people. Uses can review and add orgnisation profiles and ratings view ratings. This project showcases my ability to build a full-stack application with a relational database backend and a responsive, interactive frontend. Using modern technologies and best practices to ensure the codebase is maintainable, scalable, and ready for future enhancements.
+Raven is a full-stack application built to enable users to search through social purpose organisations based on the kind of support they offer to young people. Users can review and add orgnisation profiles and ratings. This project demostartes my ability to build a full-stack application with a relational database backend and a responsive, interactive frontend. Using modern technologies and best practices to ensure the codebase is maintainable, scalable, and ready for future enhancements.
+
+With a background in working within charitable organisations and a passion for supporting young people, I have observed the challenges that educators and thier communitites face in finding organisations that can adequately support their needs. Despite the numerous organisations offering support, the quality and impact of these services vary greatly. Raven was inspired by the need to make these services more accessible and to provide transparency regarding the quality and impact of the support they offer. This project aims to bridge the gap between organisations and those seeking assistance, providing the opportunity to easily find and connect with the resources they need.
 
 ### Technologies Used
 
@@ -31,7 +33,7 @@ Raven is a full-stack application built to enable users to search through social
 
 #### Backend
 The BackEnd of this project is structured into the following key folders:
-  - **Models**
+- **Models**
       - *Organisation:* Represents an organisation with various attributes like name, logo, overview, and support areas.
       - *Rating:* Represents a rating for an organisation, including the rating value, comment, name, and timestamp.
 - **Repositories**
@@ -148,10 +150,3 @@ Benefits of using a Relational Database for this project include;
                   ├── main.tsx                  
                   ├── index.html                
 
-
-### Installation
-Clone the repository.
-Navigate to the backend directory and run mvn install to install dependencies.
-Update application.properties with your MySQL configurations.
-Run the backend application with mvn spring-boot:run.
-Navigate to the frontend directory, install dependencies with npm install, and start the development server with npm run dev.

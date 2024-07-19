@@ -29,50 +29,42 @@ Raven is a full-stack application built to enable users to search through social
 
 ### Structure Overview & Key Components
 
-  - #### Backend
-    The BackEnd of this project is structured into the following key folders:
-    - **Models**
+#### Backend
+The BackEnd of this project is structured into the following key folders:
+  - **Models**
       - *Organisation:* Represents an organisation with various attributes like name, logo, overview, and support areas.
       - *Rating:* Represents a rating for an organisation, including the rating value, comment, name, and timestamp.
-    - **Repositories**
-      - *OrganisationRepository:* Handles database operations for the Organisation entity, including custom queries to count organisations by support area.
-      - *RatingRepository:* Handles database operations for the Rating entity, including fetching ratings by organisation.
-    - **Services**
-      - *RavenService:* Contains business logic for creating, reading, updating, and deleting organisations and ratings. Handles the core functionalities of the application.
-    - **Controllers**
-      - *RavenController:* Manages API endpoints for organisations and ratings, including endpoints to add organisations, create ratings, fetch organisations, and count organisations by support area.
-    - **Exception Handling**
-      - *NotFoundException:* Custom exception for handling cases where an entity is not found in the database.
-    - **Resources**
-      - *data.sql*: Contains dummy data for demonstration purposes. This script inserts sample organisations and their details into the database.
-      - *schema.sql:* Defines the structure of the database, including the tables for organisations and ratings, and the relationships between them.
+- **Repositories**
+  - *OrganisationRepository:* Handles database operations for the Organisation entity, including custom queries to count organisations by support area.
+  - *RatingRepository:* Handles database operations for the Rating entity, including fetching ratings by organisation.
+- **Services** *RavenService:* Contains business logic for creating, reading, updating, and deleting organisations and ratings. Handles the core functionalities of the application.
+- **Controllers** *RavenController:* Manages API endpoints for organisations and ratings, including endpoints to add organisations, create ratings, fetch organisations, and count organisations by support area.
+- **Exception Handling** *NotFoundException:* Custom exception for handling cases where an entity is not found in the database.
+- **Resources** *data.sql*: Contains dummy data for demonstration purposes. This script inserts sample organisations and their details into the database. *schema.sql:* Defines the structure of the database, including the tables for organisations and ratings, and the relationships between them.
      
-  - #### FrontEnd
-    App.tsx is The main entry point of the application, setting up the router and fetching initial data. The frontend of this project is then structured into the following key folders:
-      - **assets:** Contains background and logo images.
-      - **components:** Reusable UI components such as Carousel, Dropdown Box, Form, Navbar, OrganisationCard (displaysing a brief overview of an organisation.), OrganisationInfo, ( displaying detailed information about an organisation), RatingCard, and SearchBox.
-      - **containers:** Pages and views including
-        - *Home*,The landing page with a navigation link to explore organisations.
-        - *About*,
-        - *Organisations*: Lists all organisations, with filtering options based on support areas.
-        - *OrganisationProfile*: Displays detailed information and ratings carousel for a specific organisation.
-        - *CreateOrganisation*: A form to add a new organisation.
-        - *RateOrganisation*: A form to add a rating for an organisation
-      - **styles:** SCSS files for styling, including _reset.scss, _typography.scss, and _variables.scss.
-      - **types:** TypeScript type definitions for Organisation and Rating.
-    And has the following Key Components
+#### FrontEnd
+App.tsx is The main entry point of the application, setting up the router and fetching initial data. The frontend of this project is then structured into the following key folders:
+- **assets:** Contains background and logo images.
+- **components:** Reusable UI components such as Carousel, Dropdown Box, Form, Navbar, OrganisationCard (displaysing a brief overview of an organisation.), OrganisationInfo, ( displaying detailed information about an organisation), RatingCard, and SearchBox.
+- **containers:** Pages and views including
+  - *Home*,The landing page with a navigation link to explore organisations.
+  - *About*,
+  - *Organisations*: Lists all organisations, with filtering options based on support areas.
+  - *OrganisationProfile*: Displays detailed information and ratings carousel for a specific organisation.
+  - *CreateOrganisation*: A form to add a new organisation.
+  - *RateOrganisation*: A form to add a rating for an organisation
+- **styles:** SCSS files for styling, including _reset.scss, _typography.scss, and _variables.scss.
+- **types:** TypeScript type definitions for Organisation and Rating.
 
-
-  
-  - #### Database Design
-    This project demonstrates the use of Relational Databases and showcases my ability to create and manage one-to-many relationships.
-    - **Organisation Table:** Stores information about various social purpose organisations.
-    - **Rating Table:** Stores ratings for the organisations, with a foreign key linking each rating to an organisation.
+#### Database Design
+This project demonstrates the use of Relational Databases and showcases my ability to create and manage one-to-many relationships.
+- **Organisation Table:** Stores information about various social purpose organisations.
+- **Rating Table:** Stores ratings for the organisations, with a foreign key linking each rating to an organisation.
       
-    Benefits of using a Relational Database for this project include;
-    - **Data Integrity:** The use of primary and foreign keys ensures the integrity and consistency of the data. Each rating is associated with a valid organisation, preventing orphaned records.
-    - **Scalability:** handling large volumes of data efficiently and providing horizontal and vertical scalability to meet growing demands.
-    - **Flexibility:** The structured format  allows for complex queries and easy data manipulation, which is essential for this project's potential diverse data retrieval needs.
+Benefits of using a Relational Database for this project include;
+- **Data Integrity:** The use of primary and foreign keys ensures the integrity and consistency of the data. Each rating is associated with a valid organisation, preventing orphaned records.
+- **Scalability:** handling large volumes of data efficiently and providing horizontal and vertical scalability to meet growing demands.
+- **Flexibility:** The structured format  allows for complex queries and easy data manipulation, which is essential for this project's potential diverse data retrieval needs.
   
 ### Best Practices
 
